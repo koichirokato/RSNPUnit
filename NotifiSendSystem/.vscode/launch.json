@@ -1,0 +1,140 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Export<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "Export",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ImageGen<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "ImageGen",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMFInit<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "JMFInit",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMFRegistry<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "JMFRegistry",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMStudio<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "JMStudio",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JavaSoundAuto<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "JavaSoundAuto",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArrayToPCM<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.ibm.media.codec.audio.ArrayToPCM",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GainCodec<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.ibm.media.codec.audio.GainCodec",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SdpParser<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.sun.media.sdp.SdpParser",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMFPropertiesGen<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.sun.media.util.JMFPropertiesGen",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Registry<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.sun.media.util.Registry",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RegistryGen<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "com.sun.media.util.RegistryGen",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AddressList<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "org.apache.james.mime4j.field.address.AddressList",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AddressListParser<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "org.apache.james.mime4j.field.address.parser.AddressListParser",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ContentDispositionParser<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "org.apache.james.mime4j.field.contentdisposition.parser.ContentDispositionParser",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ContentTypeParser<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "org.apache.james.mime4j.field.contenttype.parser.ContentTypeParser",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DateTimeParser<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "org.apache.james.mime4j.field.datetime.parser.DateTimeParser",
+            "projectName": "NotifiSendSystem"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StateXMLNotificationMain<NotifiSendSystem>",
+            "request": "launch",
+            "mainClass": "rsnp.StateXMLNotificationMain",
+            "projectName": "NotifiSendSystem"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+2019-08-17 15:36:38,250 file.manager INFO 1.2.0
+2019-08-17 15:36:38,250 file.manager INFO Copyright (C) 2003-2010
+2019-08-17 15:36:38,250 file.manager INFO   Noriaki Ando
+2019-08-17 15:36:38,250 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-17 15:36:38,250 file.manager INFO Manager starting.
+2019-08-17 15:36:38,250 file.manager INFO Starting local logging.
+2019-08-17 15:36:38,256 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-17 15:36:40,267 file.ManagerServant INFO Master manager not found
+2019-08-17 15:36:40,269 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-17 15:36:40,273 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-17 15:36:40,282 file.ec_base INFO setRate(1000000.000000) done
+2019-08-17 15:36:40,282 file.ec_base INFO setRate(1000.000000) done
+2019-08-17 15:36:40,282 file.rtobject INFO 1 execution context was created.
+2019-08-17 15:36:40,283 file.rtobject INFO Initial active configuration set is default.
+2019-08-17 15:36:47,895 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-17 15:36:47,897 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-17 15:36:52,348 file.ManagerServant INFO Master manager not found
+2019-08-17 15:37:04,407 file.ManagerServant INFO Master manager not found
+2019-08-17 15:37:16,460 file.ManagerServant INFO Master manager not found
+2019-08-17 15:37:20,948 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect(self._IPaddress[0], self._Port[0])
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+TypeError: connect() takes exactly one argument (2 given)
+
+2019-08-17 15:37:28,546 file.ManagerServant INFO Master manager not found
+2019-08-17 15:37:29,233 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-17 15:37:29,234 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-17 15:37:29,234 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.

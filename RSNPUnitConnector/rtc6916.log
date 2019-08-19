@@ -1,0 +1,58 @@
+2019-08-17 15:08:35,249 file.manager INFO 1.2.0
+2019-08-17 15:08:35,249 file.manager INFO Copyright (C) 2003-2010
+2019-08-17 15:08:35,249 file.manager INFO   Noriaki Ando
+2019-08-17 15:08:35,249 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-17 15:08:35,250 file.manager INFO Manager starting.
+2019-08-17 15:08:35,250 file.manager INFO Starting local logging.
+2019-08-17 15:08:35,255 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-17 15:08:37,275 file.ManagerServant INFO Master manager not found
+2019-08-17 15:08:37,276 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-17 15:08:37,279 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-17 15:08:37,288 file.ec_base INFO setRate(1000000.000000) done
+2019-08-17 15:08:37,288 file.ec_base INFO setRate(1000.000000) done
+2019-08-17 15:08:37,289 file.rtobject INFO 1 execution context was created.
+2019-08-17 15:08:37,289 file.rtobject INFO Initial active configuration set is default.
+2019-08-17 15:08:39,239 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-17 15:08:39,239 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-17 15:08:49,321 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:01,388 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:02,688 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect(self._IPaddress[0], self._Port[0])
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+TypeError: connect() takes exactly one argument (2 given)
+
+2019-08-17 15:09:02,691 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1370, in on_deactivated
+    ret = self.onDeactivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 124, in onDeactivated
+    self._Sock.disconnect()
+AttributeError: '_socketobject' object has no attribute 'disconnect'
+
+2019-08-17 15:09:13,496 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:13,904 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-17 15:09:25,612 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:28,693 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect(self._IPaddress[0], self._Port[0])
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+TypeError: connect() takes exactly one argument (2 given)
+
+2019-08-17 15:09:28,694 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1370, in on_deactivated
+    ret = self.onDeactivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 124, in onDeactivated
+    self._Sock.disconnect()
+AttributeError: '_socketobject' object has no attribute 'disconnect'
+
+2019-08-17 15:09:37,711 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:49,821 file.ManagerServant INFO Master manager not found
+2019-08-17 15:09:56,142 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-17 15:09:56,145 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-17 15:09:56,145 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.
