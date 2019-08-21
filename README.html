@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="%E5%A4%9A%E7%A8%AE%E5%A4%9A%E6%A7%98%E3%81%AA%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%92rsnp%E9%80%9A%E4%BF%A1%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%99%E3%82%8B%E6%B1%8E%E7%94%A8%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB-ver-10">多種多様なシステムをRSNP通信可能にする汎用ユニット　サービス利用マニュアル Ver. 1.0</h1>
+<p>芝浦工業大学　理工学研究科　機械工学専攻　知能機械システム研究室　岡野　憲，松日楽　信人</p>
+<p>改善点などのご意見があれば，下記までご連絡ください．</p>
+<p>連絡先：<br>
+芝浦工業大学 機械機能工学科 知能機械システム研究室<br>
+〒135-8548 東京都江東区豊洲3-7-5<br>
+機械工学専攻 修士2年 岡野　憲 Okano Satoshi<br>
+E-mail:md18020@shibaura-it.ac.jp</p>
+<h2 id="1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">1. はじめに</h2>
+<p>近年，労働人口の減少等から，その補完としてロボットの活用が期待されている．平成22年に発表されたNEDOの資料[1]では，ロボット市場の拡大がされている．ゆえに，今後，ロボットの台数が増加するのも必然である．そこで，増加した多数のロボットを管理，監視するためのシステムが必要になってくる．また，各ロボットからデータを取得することで，そのデータを活用した様々なサービスを期待することができる．そこで，本提案で開発した汎用ユニット(以下，「RSNPユニット」と記載)を，多種多様なロボットやデバイスに外付けで接続することで，取得したデータをRSNP(Robot Serivice Networking Protocol)[2]通信でインターネット経由でサーバにアップロードして蓄積し，Webブラウザ等のGUI上で各ロボットの状態を管理，監視することができる．以下の図のようにRSNPユニットをロボットに接続して使用することが可能である．<br>
+<img src="https://user-images.githubusercontent.com/44587055/58568589-81130980-826f-11e9-83c6-3e2803daf237.png" width=45%></p>
+<p><strong>※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．</strong><br>
+http://robots.aiit.ac.jp:8080/UpdateNotificationState/services</p>
+<h2 id="2-%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%BA%96%E5%82%99">2. ユニットを使用するための準備</h2>
+<p>ユニットを使用するためにいくつかのソフトを予め，ダウンロード，インストール，設定する必要があります．ご了承ください．</p>
+<h3 id="21-rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%81%AE%E9%9B%BB%E6%BA%90%E6%8A%95%E5%85%A5">2.1 RSNPユニットの電源投入</h3>
+<p>まず，RSNPユニットの電源を入れます．電源ボタンは搭載していないため以下の図に示すように，microUSBにusbケーブルを接続します．<br>
+<img src="" width=45%></p>
+<h3 id="22-rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%81%A8pc%E3%81%A8%E3%81%AE%E6%8E%A5%E7%B6%9A">2.2 RSNPユニットとPCとの接続</h3>
+<p>RSNPユニットの初期設定を行うために，PCと有線で接続します．<br>
+現状，LANケーブルとUSBケーブルで接続する2通りの方法があります．<br>
+<b>ケース1-LANケーブルでの接続</b><br>
+LANケーブルでPCに接続するために，以下の図に示すように配線します．
+ケーブルの種類は，クロスかストレートのどちらでも接続可能です．<br>
+<img src="" width=45%></p>
+<p><b>ケース2-USBケーブルでの接続</b>
+USBケーブルでPCに接続するために，以下の図に示すように配線します．<br>
+<img src="" width=45%></p>
+<h3 id="23-rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%81%ABssh%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B">2.3 RSNPユニットにSSH接続する</h3>
+<p><b>ケース1-Linux，Mac OSの場合</b><br>
+Linuxを使用している場合，次のコマンドを実行することで，SSH接続することができます．<br>
+<code>~$ ssh raspberrypi</code></p>
+<p><b>ケース2-Windowsの場合</b></p>
+<h4 id="231-tera-term%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%EF%BC%86%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">2.3.1 Tera Termのダウンロード＆インストール</h4>
+<p>RSNPユニットにリモートでSSH接続するためのソフトウェアが必要になります．<br>
+今回は，クライアントソフトウェアとして<strong>Tera Term</strong>を使用します．<br>
+以下のサイトより，ダウンロードとインストールを行ってください．<br>
+<strong>窓の杜 Tera Term</strong><br>
+https://forest.watch.impress.co.jp/library/software/utf8teraterm/</p>
+<h4 id="232-rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%81%AB%E6%8E%A5%E7%B6%9A">2.3.2 RSNPユニットに接続</h4>
+<p>次に，インストールしたTera Termを立ち上げます．</p>
+<p>以下の図のような画面が表示されます．<br>
+<img src="https://user-images.githubusercontent.com/44587055/58787570-08240100-8625-11e9-84c8-be85ba970c81.png" width=60%></p>
+<p>ホストに&quot;raspberrypi&quot;と，TCPポートに&quot;22&quot;と入力し，「OK」をクリックします．</p>
+<h4 id="233-raspberry-pi%E3%81%AB%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">2.3.3 Raspberry Piにログイン</h4>
+<p>次にRaspberry Piにログインをします．<br>
+上記で「OK」をクリック後に以下のような画面が表示されます．<br>
+<img src="https://user-images.githubusercontent.com/44587055/58788978-014abd80-8628-11e9-87a8-6826dc60c4a5.png" width=60%></p>
+<p>ユーザ名に&quot;pi&quot;とパスフレーズに&quot;8073&quot;と入力し，「OK」をクリックします．</p>
+<p><b>ケース1，ケース2-共通</b><br>
+RSNPユニットにSSH接続すると以下のような画面が表示されます．</p>
+<h3 id="24-javajdk%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">2.4 java(jdk)のインストール</h3>
+<p>java(jdk)をインストールします．以下のようにコマンドを入力し実行します．<br>
+<code>~$ sudo apt-get install java-1.8.0-openjdk</code></p>
+<p>java(jdk)がインストールされたか念のため確認します．以下のようにコマンドを入力し実行します．<br>
+<code>~$ java -version</code></p>
+<p>これでバージョンが表示されれば，インストール完了です．</p>
+<h3 id="25-github%E3%81%8B%E3%82%89%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%82%92%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%B3%E3%81%99%E3%82%8B">2.5 Githubからリポジトリをクローンする</h3>
+<p>必要なファイルをダウンロードします．<br>
+任意のディレクトリ以下に次のようにコマンドを入力し実行します．<br>
+<code>~$ git clone https://github.com/SatoshiOkano/RSNPUnit.git</code></p>
+<p>次に，ダウンロードされたか確認するため，以下のようにコマンドを入力します．<br>
+<code>~$ ls</code></p>
+<p>ダウンロードされていれば，<code>&quot;RSNPUnit&quot;</code>というディレクトリが存在します．</p>
+<h3 id="26-properties%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A">2.6 propertiesファイルの設定</h3>
+<p>ダウンロードしたディレクトリ内に<code>&quot;DataLog&quot;</code>というディレクトリがあるので，そこに移動します．<br>
+以下のようにコマンドを入力し実行します．<br>
+<code>~$ cd /RSNPUnit/DataLog</code></p>
+<p>移動すると，<code>&quot;Config.properties&quot;</code>というファイルがあります．<br>
+次に，以下のようにコマンドを入力します．<br>
+<code>~$ sudo nano Config.properties</code></p>
+<p>※ファイルを編集するためのエディタとして今回は&quot;nano&quot;を使用していますが，好みのものを使用してください．</p>
+<p>デフォルトでは，以下のように記述されています．</p>
+<pre class="hljs"><code><div>#Configuretion
+robot_id  = 1  
+end_point = http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
+send_interval = 10000
+ip_address = 169.254.183.9
+port = 8000
+</div></code></pre>
+<p>各パラメータの意味は，次のようになっています．</p>
+<ul>
+<li><strong>robot_id</strong> ： ロボットの識別ID</li>
+<li><strong>end_point</strong> ： サーバのアドレス</li>
+<li><strong>send_interval</strong> ： 送信時間間隔</li>
+<li><strong>ip_address</strong> : RSNPユニット本体のIPアドレス</li>
+<li><strong>port</strong> ： Socket通信のポート番号</li>
+</ul>
+<p>必要に応じて，これらの各パラメータを変更します．</p>
+<h3 id="37-%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E5%AE%9F%E8%A1%8C">3.7 プログラムの実行</h3>
+<p>まず，<code>「RSNPcomms.jar」</code>を実行します．
+<code>「RSNP_lecture」</code>ディレクトリに戻るため，以下のようにコマンドを入力します．<br>
+<code>~$ cd..</code></p>
+<p>ファイルが存在しているか確認するため，以下のコマンドを入力します．<br>
+<code>~$ ls</code></p>
+<p><code>「RSNPcomms.jar」</code>，<code>「Sensing.py」</code>が有ります．</p>
+<p>次に，実行するために以下のようにコマンドを入力します．<br>
+<code>~$ java -jar RSNPcomms.jar</code></p>
+<p>実行が完了したら，別のウィンドウでコマンドを打つために，セッションの複製を行います．
+Tera Termの左上のファイルをクリックし，以下の図のように「セッションの複製」をクリックします．<br>
+<img src="https://user-images.githubusercontent.com/44587055/58793457-209a1880-8631-11e9-9813-62f358d67991.png" width=60%></p>
+<p>すると，新たにウィンドウが開かれます．
+そこに，<code>「Sensing.py」</code>を実行するために以下のようにコマンドを入力します．<br>
+<code>~$ python Sensing.py</code></p>
+<p>実行するとウィンドウに以下のように文字列が定期的に表示されます．</p>
+<pre class="hljs"><code><div>switch OFF
+{&quot;data&quot;:[{&quot;ac_id&quot;:1,&quot;ac&quot;:&quot;sensor status&quot;,&quot;re_id&quot;:1,&quot;re&quot;:&quot;off&quot;,&quot;co&quot;:&quot;&quot;}]}
+</div></code></pre>
+<p>表記されているデータに関しては<strong>4. 通信仕様</strong>に記述されています．</p>
+<h3 id="38-%E7%8A%B6%E6%85%8B%E3%81%AE%E7%A2%BA%E8%AA%8D">3.8 状態の確認</h3>
+<p>センサの状態がサーバに送信され反映されているか確認します．<br>
+以下のURLにアクセスします．<br>
+http://robots.aiit.ac.jp:8080/Robomech2019/</p>
+<p>以下のようにブラウザ上で表示されていれば，確認完了です．<br>
+Raspberry Pi②を稼働させた例．<br>
+<img src="https://user-images.githubusercontent.com/44587055/58847016-4caeab80-86bc-11e9-9b39-e87f95fe140a.png" width=60%></p>
+<p>タクトスイッチを押し続け，センサ状態が<strong>on</strong>になるか，確認してください．</p>
+<h2 id="4-%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E8%A8%AD%E5%AE%9A">4. ネットワーク設定</h2>
+<p>RSNP通信は外部のインターネットに接続するのが前提です．<br>
+そのため，ここでは無線LANネットワーク設定をします．<br>
+まず，接続するルータ等のSSIDとパスワードを調べます．<br>
+次に，以下のconfファイルをエディタで編集します．<br>
+<code>~$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</code></p>
+<p><code>wpa_supplicant.conf</code>を次のように記述します．</p>
+<pre class="hljs"><code><div>network={
+     ssid=&quot;SSIDを記述する&quot;
+     psk=&quot;パスワードを記述する&quot;
+     key_mgmt=WPA-PSK
+}
+</div></code></pre>
+<p>次に，Raspberry Piの無線LANを再起動します．以下のようにコマンドを入力します．<br>
+<code>~$ sudo ifdown wlan0</code><br>
+数秒すると無線LANはオフになるので，以下のようにコマンドを入力します．<br>
+<code>~$ sudo ifup wlan0</code><br>
+以上で，有線ネットワークが接続可能になります．</p>
+<h2 id="5-%E9%80%9A%E4%BF%A1%E3%83%87%E3%83%BC%E3%82%BF%E4%BB%95%E6%A7%98">5. 通信データ仕様</h2>
+<p>RSNP通信デバイスとロボット間のデータのやり取りはsocket通信で行います．<br>
+ただし，以下の5種類のデータで送信を行う必要があります．</p>
+<ul>
+<li><strong>Action_id</strong></li>
+<li><strong>Action名</strong></li>
+<li><strong>Result_id</strong></li>
+<li><strong>Resultデータ</strong></li>
+<li><strong>コメント</strong></li>
+</ul>
+<p><strong>Action_id</strong>とは，<strong>Action名</strong>に対する紐づけ番号である．<br>
+<strong>Action名</strong>とは，ロボットが行った動作名などである．<br>
+<strong>Result_id</strong>とは，<strong>Resultデータ</strong>に対する紐づけ番号である．<br>
+<strong>Resultデータ</strong>とは，ロボットから得たデータ(変数)などである．<br>
+<strong>コメント</strong>とは，コメント記述を入れたい場合に用いる．<br>
+例えば，挨拶を3回，人数カウントを5人としたロボットがあったとする．この場合，データの仕様は次のようになる．</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">仕様名</th>
+<th style="text-align:center">データ1</th>
+<th style="text-align:center">データ2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Action_id</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Action名</strong></td>
+<td style="text-align:center">挨拶回数</td>
+<td style="text-align:center">人数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Result_id</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Resultデータ</strong></td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>コメント</strong></td>
+<td style="text-align:center">無し</td>
+<td style="text-align:center">無し</td>
+</tr>
+</tbody>
+</table>
+<p>ここで，実際のデータ形式は以下のようなjson形式としてます．<code>{...}</code>内において，先頭に<code>「&quot;data&quot;:」</code>があり，その次に配列のカッコ(<code>[]</code>)内において，1種類のデータが配列の1つの要素に入ります．ダブルクォーテーション(<code>&quot;</code>)で囲んだ仕様名と値をカンマ(<code>:</code>)で区切ります．3点(<code>...</code>)には，対応するデータ等が入ります．見やすいように改行してありますが，実際は1行でデータ送信してください．これ以外の仕様でのデータを送信するとRaspi側で受信できないのでご注意ください．</p>
+<pre class="hljs"><code><div>{  
+  &quot;data&quot;:  
+  [  
+    {  
+      &quot;ac_id&quot;: ... ,  
+      &quot;ac&quot;: ... ,  
+      &quot;re_id&quot;: ... ,  
+      &quot;re&quot;: ... ,  
+      &quot;co&quot;: ...  
+    },  
+    {...},  
+    ...  
+  ]  
+}  
+</div></code></pre>
+<p>仕様名は以下の表のように短縮形となっているのでご注意ください．</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">仕様名</th>
+<th style="text-align:center">省略形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Action_id</strong></td>
+<td style="text-align:center"><strong>ac_id</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Action名</strong></td>
+<td style="text-align:center"><strong>ac</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Result_id</strong></td>
+<td style="text-align:center"><strong>re_id</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Resultデータ</strong></td>
+<td style="text-align:center"><strong>re</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>コメント</strong></td>
+<td style="text-align:center"><strong>co</strong></td>
+</tr>
+</tbody>
+</table>
+<p>上記のロボットの例の場合は，<br>
+<code>{&quot;data&quot;:[{&quot;ac_id&quot;:1,&quot;ac&quot;:&quot;挨拶回数&quot;,&quot;re_id&quot;:1,&quot;re&quot;:3,&quot;co&quot;:&quot;&quot;},{&quot;ac_id&quot;:2,&quot;ac&quot;:&quot;人数&quot;,&quot;re_id&quot;:2,&quot;re&quot;:5,&quot;co&quot;:&quot;&quot;}]}</code><br>
+となります．(コメントは無しのため，空欄(&quot;&quot;)となっている)<br>
+複数種類の場合は，配列の成分が増加し，<br>
+<code>{&quot;data&quot;:[{...},{...},{...},...]}</code><br>
+となる．今回は5種類まで対応している．</p>
+
+</body>
+</html>
