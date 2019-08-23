@@ -37,7 +37,8 @@ http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 RSNPユニットの初期設定を行うために，PCと有線で接続します．  
 現状，LANケーブルで接続する方法のみがあります．  
 **LANケーブルとの接続**  
-LANケーブルでPCに接続するために，以下の図に示すように配線します．ケーブルの種類は，クロスかストレートのどちらでも接続可能です． PCとの接続には，LANからUSB-typeA変換ハブ，LANからUSB-typeC変換ハブを使用すれば，PCにLANポート(Ethernetポート)が無くても，接続可能です． 
+LANケーブルでPCに接続するために，以下の図に示すように配線します．ケーブルの種類は，クロスかストレートのどちらでも接続可能です． PCとの接続には，LANからUSB-typeA変換ハブ，LANからUSB-typeC変換ハブを使用すれば，PCにLANポート(Ethernetポート)が無くても，接続可能です．  
+
 <img src="https://user-images.githubusercontent.com/44587055/63603082-cf803c00-c603-11e9-9604-efef516c6334.png" width=45%>  
 
 LANポート同士で接続した場合  
@@ -190,13 +191,14 @@ port = 8000
 | :-----------------------------: | :----------: |
 | Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
-次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．
-http://githubXXXXXXXX
+次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．  
 
-RTSystemEditor上で，RTCは次の表のように表示されます．
-<img src="https://user-images.githubusercontent.com/44587055/63603822-5386f380-c605-11e9-8deb-563cd069e728.png" width=40%>
+http://githubXXXXXXXX  
 
-Inportには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，<b>X章 データ通信仕様</b>に記しているので，参照してください．  
+RTSystemEditor上で，RTCは次の表のように表示されます．  
+<img src="https://user-images.githubusercontent.com/44587055/63603822-5386f380-c605-11e9-8deb-563cd069e728.png" width=40%>  
+
+Inportには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，**X章 データ通信仕様**に記しているので，参照してください．  
 TimedString型のInportを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．
 
 #### RSNPユニットに接続する  
