@@ -16,7 +16,7 @@ E-mail:md18020@shibaura-it.ac.jp
 ## 1. はじめに  
 
 近年，労働人口の減少等から，その補完としてロボットの活用が期待されている．平成22年に発表されたNEDOの資料[1]では，ロボット市場の拡大がされている．ゆえに，今後，ロボットの台数が増加するのも必然である．そこで，増加した多数のロボットを管理，監視するためのシステムが必要になってくる．また，各ロボットからデータを取得することで，そのデータを活用した様々なサービスを期待することができる．そこで，本提案で開発した汎用ユニット(以下，「RSNPユニット」と記載)を，多種多様なロボットやデバイスに外付けで接続することで，取得したデータをRSNP(Robot Serivice Networking Protocol)[2]通信でインターネット経由でサーバにアップロードして蓄積し，Webブラウザ等のGUI上で各ロボットの状態を管理，監視することができる．以下の図のようにRSNPユニットをロボットに接続して使用することが可能である．  
-<img src="https://user-images.githubusercontent.com/44587055/58568589-81130980-826f-11e9-83c6-3e2803daf237.png" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63586989-c2505680-c5dd-11e9-8ae9-64afd83e85de.png" width=60%>  
 
 **※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．**  
 http://robots.aiit.ac.jp:8080/UpdateNotificationState/services  
@@ -30,7 +30,7 @@ http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 ### 2.1 RSNPユニットの電源投入  
 
 まず，RSNPユニットの電源を入れます．電源ボタンは搭載していないため以下の図に示すように，microUSBにusbケーブルを接続します．  
-<img src="" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63603070-c8592e00-c603-11e9-820d-ba7243321181.png" width=45%>  
 
 ### 2.2 RSNPユニットとPCとの接続  
 
@@ -38,7 +38,17 @@ RSNPユニットの初期設定を行うために，PCと有線で接続しま�
 現状，LANケーブルで接続する方法のみがあります．  
 **LANケーブルとの接続**  
 LANケーブルでPCに接続するために，以下の図に示すように配線します．ケーブルの種類は，クロスかストレートのどちらでも接続可能です． PCとの接続には，LANからUSB-typeA変換ハブ，LANからUSB-typeC変換ハブを使用すれば，PCにLANポート(Ethernetポート)が無くても，接続可能です． 
-<img src="" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63603082-cf803c00-c603-11e9-9604-efef516c6334.png" width=45%>  
+
+LANポート同士で接続した場合  
+
+<img src="https://user-images.githubusercontent.com/44587055/63603092-d60eb380-c603-11e9-88ed-a2e9b6bb35d4.png" width=45%>  
+
+USB-typeAに接続した場合  
+
+<img src="https://user-images.githubusercontent.com/44587055/63603101-dc9d2b00-c603-11e9-8295-bd30382e91f9.png" width=45%>  
+
+USB-typeCに接続した場合  
 
 ### 2.3 RSNPユニットに接続する  
 
@@ -79,7 +89,7 @@ https://forest.watch.impress.co.jp/library/software/utf8teraterm/
 
 RSNPユニットに接続すると以下のような画面が表示されます．  
 
-<img src="" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63604122-ffc8da00-c605-11e9-9512-c9dffb785908.png" width=60%>  
 
 ### 2.4 Wi-Fi接続設定  
 RSNPユニットに対して，ロボットやデバイスを接続する場合，有線LANで接続します．しかし，RSNP通信自体は現状，無線LANを使用することを前提としています(1. はじめに 図を参照)．そこで，ここでは無線LANの接続設定を行います．  
@@ -89,7 +99,7 @@ RSNPユニットに対して，ロボットやデバイスを接続する場合�
 
 ※ファイルを編集するためのエディタとして今回は"nano"を使用していますが，好みのものを使用してください．以下，"nano"を使用します．
 
-編集の仕方は次のとおりです．  
+次のとおりに追記してください．  
 ~~~text
 network={
      ssid="SSIDを記述"
@@ -176,17 +186,15 @@ port = 8000
 ロボットまたはデバイスがRTミドルウエアを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．
 以下の各バージョンで動作確認済みです．  
 
-|OS|OpenRTM-aist|
-|:---:|:-----------:|
-|Windows 7,Windows 8, Windows 10|1.1.2, 1.2.0|  
+|               OS                | OpenRTM-aist |
+| :-----------------------------: | :----------: |
+| Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
 次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．
 http://githubXXXXXXXX
 
 RTSystemEditor上で，RTCは次の表のように表示されます．
-|名称：RSNPUnitConnectorRTC|
-|:---:|
-|<img src="https://user-images.githubusercontent.com/44587055/63411688-08b48280-c431-11e9-9635-b506a6f3e5ba.png" width=40%>|
+<img src="https://user-images.githubusercontent.com/44587055/63603822-5386f380-c605-11e9-8deb-563cd069e728.png" width=40%>
 
 Inportには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，<b>X章 データ通信仕様</b>に記しているので，参照してください．  
 TimedString型のInportを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．
@@ -247,7 +255,7 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 **コメント**とは，コメント記述を入れたい場合に用います．  
 例えば，挨拶を3回，人数カウントを5人としたロボットがあったとします．この場合，データの仕様は次のようになります．  
 
-|      データ名      | データ1  | データ2 |
+|     データ名     | データ1  | データ2 |
 | :--------------: | :------: | :-----: |
 |  **Action_id**   |    1     |    2    |
 |   **Action名**   | 挨拶回数 |  人数   |
@@ -276,7 +284,7 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 
 データ名は以下の表のように短縮形となっているのでご注意ください．  
 
-|      データ名      |  省略形   |
+|     データ名     |  省略形   |
 | :--------------: | :-------: |
 |  **Action_id**   | **ac_id** |
 |   **Action名**   |  **ac**   |
