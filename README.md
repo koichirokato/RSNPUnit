@@ -32,12 +32,13 @@ E-mail:md18020@shibaura-it.ac.jp
         - [2.3.2 RSNPユニットに接続](#232-rsnpユニットに接続)
         - [2.3.3 Raspberry Piにログイン](#233-raspberry-piにログイン)
         - [ケース1，ケース2-共通](#ケース1ケース2-共通)
-    - [2.4 Wi-Fi接続設定](#24-wi-fi接続設定)
+    - [2.4 無線LAN接続設定](#24-無線lan接続設定)
     - [2.4 java(jdk)のインストール](#24-javajdkのインストール)
     - [2.5 Githubからファイルをダウンロード](#25-githubからファイルをダウンロード)
     - [2.6 propertiesファイルの設定](#26-propertiesファイルの設定)
 - [3 RSNPユニットの動作実行](#3-rsnpユニットの動作実行)
     - [3.1 RSNP通信プログラムの実行](#31-rsnp通信プログラムの実行)
+    - [3.2 プログラム実行のデーモン化](#32-プログラム実行のデーモン化)
     - [3.2 RTミドルウエアでの接続を行うケース](#32-rtミドルウエアでの接続を行うケース)
         - [RSNPユニットに接続する](#rsnpユニットに接続する)
     - [3.3 ROSでの接続を行うケース](#33-rosでの接続を行うケース)
@@ -131,7 +132,8 @@ RSNPユニットに接続すると以下のような画面が表示されます�
 
 <img src="https://user-images.githubusercontent.com/44587055/63604122-ffc8da00-c605-11e9-9512-c9dffb785908.png" width=60%>  
 
-### 2.4 Wi-Fi接続設定  
+### 2.4 無線LAN接続設定  
+
 RSNPユニットに対して，ロボットやデバイスを接続する場合，有線LANで接続します．しかし，RSNP通信自体は現状，無線LANを使用することを前提としています(1. はじめに 図を参照)．そこで，ここでは無線LANの接続設定を行います．  
 まず，接続するルータ等のSSIDとパスワードを調べます．  
 次に，`wpa_supplicant.conf`ファイルをエディタで編集します．  
@@ -140,6 +142,7 @@ RSNPユニットに対して，ロボットやデバイスを接続する場合�
 ※ファイルを編集するためのエディタとして今回は"nano"を使用していますが，好みのものを使用してください．以下，"nano"を使用します．
 
 次のとおりに追記してください．  
+
 ~~~text
 network={
      ssid="SSIDを記述"
@@ -176,34 +179,21 @@ java(jdk)がインストールされたか念のため確認します．以下�
 ### 2.5 Githubからファイルをダウンロード  
 
 必要なファイルをダウンロードします．  
-まず，任意のディレクトに新規にディレクトリを作成します．  
-今回はホームディレクトリに作成します．
+まず，任意のディレクトにダウンロードします．  
+今回はホームディレクトリにダウンロードします．
 ホームディレクトリに戻るために，次のようにコマンドを入力し実行します．  
 `~$ cd`  
-ディレクトリを作成します．  
-`~$ mkdir RSNPUnitSystemDir`  
-作成したディレクトリに移動します．次のようにコマンドを入力し実行します．  
-`~$ cd RSNPUnitSystemDir`  
-ファイルをダウンロードします．次のようにコマンドを入力し実行します．  
-`~$ wget https://github.com/SatoshiOkano/RSNPUnit/blob/master/RSNPcomms.jar`  
+リポジトリをクローンします(ファイルをダウンロードします)．次のようにコマンドを入力し実行します．  
+`~$ git clone https://github.com/SatoshiOkano/RSNPUnit.git`  
 ダウンロードが成功したか確認するため，以下のようにコマンドを入力します．  
 `~$ ls`  
-ダウンロードが成功していれば，`"RSNPcomms.jar"`というファイルが存在します．  
-
-次に，`"RSNPUnitSystemDir"`内に別のディレクトリを新規に作成します．  
-次のようにコマンドを入力し実行します．  
-`~$ mkdir DataLog`  
-作成したディレクトリに移動します．次のようにコマンドを入力し実行します．  
-`~$ cd DataLog`  
-ファイルをダウンロードします．次のようにコマンドを入力し実行します．  
-`~$ wget https://github.com/SatoshiOkano/RSNPUnit/blob/master/DataLog/Config.properties`  
+ダウンロードが成功していれば，`"RSNPUnit"`というディレクトリが存在します．  
 
 ### 2.6 propertiesファイルの設定  
 
-2.5節で作成した`"DataLog"`ディレクトリに移動します．  
-先ほどから作業を続けている場合は，この作業はしなくて結構です．  
+2.5節でダウンロードした`"DataLog"`ディレクトリに移動します．  
 以下のようにコマンドを入力し実行します．  
-`~$ cd ~/RSNPUnitSystemDir/DataLog/`  
+`~$ cd ~/RSNPUnit/DataLog/`  
 
 移動すると，`"Config.properties"`というファイルがあります．  
 次に，以下のようにコマンドを入力します．  
@@ -238,14 +228,16 @@ port = 8000
 
 まず，`"RSNPcomms.jar"`を実行します．  
 `~$ cd`でホームディレクトリに移動します．  
-`RSNPUnitSystemDir`ディレクトリに移動するため，以下のようにコマンドを入力します．  
-`~$ cd ~/RSNPUnitSystemDir/`  
+`RSNPUnit`ディレクトリに移動するため，以下のようにコマンドを入力します．  
+`~$ cd ~/RSNPUnit/`  
 ※RSNPUnitSystemDirの場所によって異なるので注意してください．
 
 次に，実行するために以下のようにコマンドを入力します．  
 `~$ java -jar RSNPcomms.jar`  
 
 停止するときは，"Ctrl"+"c"キーを入力することで停止します．  
+
+### 3.2 プログラム実行のデーモン化  
 
 ### 3.2 RTミドルウエアでの接続を行うケース  
 
@@ -258,7 +250,7 @@ port = 8000
 
 次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．  
 
-http://githubXXXXXXXX  
+https://github.com/SatoshiOkano/RSNPUnit.git  
 
 RTSystemEditor上で，RTCは次の表のように表示されます．  
 <img src="https://user-images.githubusercontent.com/44587055/63603822-5386f380-c605-11e9-8deb-563cd069e728.png" width=40%>  
