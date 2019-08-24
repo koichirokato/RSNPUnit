@@ -113,14 +113,16 @@ class RSNPUnitConnector(OpenRTM_aist.DataFlowComponentBase):
         return RTC.RTC_OK
 
     def onActivated(self, ec_id):
-        print("RSNPUnitConnector activate and connect to RSNPUnit")
+        print("RSNPUnitConnectorRTC activate")
+        print("now connecting to RSNPUnit")
         self._Sock.connect((self._IPaddress[0], self._Port[0]))
         print("connecting success")
         # failした場合 error
         return RTC.RTC_OK
 
     def onDeactivated(self, ec_id):
-        print("RSNPUnitConnector deactivate and disconnect to RSNPUnit")
+        print("RSNPUnitConnectorRTC deactivate")
+        print("now disconnect to RSNPUnit")
         self._Sock.close()
         print("disconnect success")
         # failした場合 error
@@ -128,13 +130,10 @@ class RSNPUnitConnector(OpenRTM_aist.DataFlowComponentBase):
 
     def onExecute(self, ec_id):
 
-        # IPaddressと記載するかデバイスアドレスなど
-                # 残りsample通信用プログラム作成c++, python
-                # ros用node package作成
-                # error処理
+        
         if self._SampleDataInIn.isNew():
-            _d_SampleDataIn.data = self._SampleDataInIn.read()
-            rcv_data_str = str(_d_SampleDataIn.data)
+            read_data = self._SampleDataInIn.read()
+            rcv_data_str = str(read_data)
             print("recieve data: " + rcv_data_str)  # to debug
             send_data_json = {"data": [
                 {"ac_id": 1, "ac": "robot state", "re_id": 1, "re": rcv_data_str, "co": ""}]}
@@ -142,9 +141,10 @@ class RSNPUnitConnector(OpenRTM_aist.DataFlowComponentBase):
 
             # 出来ればサービスポートで定義する
             send_data_str = json.dumps(send_data_json)
+
             self._Sock.send(send_data_str)
-            print("send data: " + send_data_str)
-            time.sleep(2)
+            print("send data by socket: " + send_data_str)
+        time.sleep(2)
         return RTC.RTC_OK
 
 
