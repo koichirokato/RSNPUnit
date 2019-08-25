@@ -27,8 +27,8 @@ E-mail:md18020@shibaura-it.ac.jp
         - [RaspberryPi 3 Model B (RSコンポーネンツ製)](#raspberrypi-3-model-b-rsコンポーネンツ製)
 - [3. RSNPユニットソフトウェア仕様](#3-rsnpユニットソフトウェア仕様)
 - [4. サーバ仕様](#4-サーバ仕様)
-- [4. 送信データ仕様](#4-送信データ仕様)
-- [5. 通信データ仕様](#5-通信データ仕様)
+- [4. RSNPでの送信データ仕様](#4-rsnpでの送信データ仕様)
+- [5. RSNPユニットへの送信データ仕様](#5-rsnpユニットへの送信データ仕様)
 - [6. 使用ソフトウェア及び入手方法，参考資料](#6-使用ソフトウェア及び入手方法参考資料)
 - [参考文献](#参考文献)
 
@@ -90,7 +90,7 @@ RSNPユニットは，マイコンとしてRSコンポーネンツ製"RaspberryP
 
 RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプリケーションにより，RSNPユニットが動作時に，Socket通信用のサーバとRSNP通信用クライアントが立ち上がっている．ここへ，ロボットやデバイス上で立ち上げたRTMのRTC，ROSのnode，SocketのClientやSerialのクライアントを接続することで通信を行う．また，フォーマットに準拠したデータを送信することで，XML形式に変換し，プロファイルとしてInformation_profileのオペレーションとしてnotify_stateでデータ送信する．
 
-<img src="https://user-images.githubusercontent.com/44587055/63586957-b5336780-c5dd-11e9-8184-1be7d9997875.png" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63649905-8d2f3a00-c77e-11e9-8f11-c6ba88d675b9.png" width=45%>  
 
 ソフトウェア要件は次の表に示すとおりである．  
 
@@ -100,7 +100,9 @@ RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプ�
 | RSNP LIB | rsnp-robot-api-2.3.0<br>rsnp-fjlib-api-2.3.0 |
 | Java VM  |                  jdk-1.8.0                   |
 
-- 開発環境：Windows 10, Eclipse Version Oxygen3(4.7.3)
+- 開発環境：Windows 10, Eclipse Version Oxygen3(4.7.3)  
+
+<div style="page-break-before:always"></div>  
 
 ## 4. サーバ仕様  
 
@@ -119,9 +121,11 @@ RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプ�
 |    mySQL     |                  Ver. 14.14                  |
 
 
-- 開発環境：Windows 10, Eclipse Version 2019-03(4.11.0)
+- 開発環境：Windows 10, Eclipse Version 2019-03(4.11.0)  
 
-## 4.送信データ仕様  
+<div style="page-break-before:always"></div>  
+
+## 4.RSNPでの送信データ仕様  
 
 XML形式のデータは実際，次のようになっている．ロボットから送信するデータは複数種類あるため，これを識別するために"アクションID"を設けている．次に，"アクション名"は，ロボットから送信するデータの名前である．"(状態)結果ID"は，基本的に"アクションID"に対応する．"(状態)結果"は，ロボットの送信する具体的なデータそのものが入る．例えば，ロボットの稼働状況や，動作回数などを入れる．"時間"は，送信時のタイムスタンプが入る．  
 
@@ -139,10 +143,11 @@ XML形式のデータは実際，次のようになっている．ロボット�
       </states>
       <time>”時間”</time>
    </notification>
-~~~
-## 5. 通信データ仕様
+~~~  
 
-RSNPユニットからロボットまたはデバイス間のデータのやり取りはSocket,Serial通信で行います．  
+## 5. RSNPユニットへの送信データ仕様
+
+RSNPユニットとロボットまたはデバイス間のデータのやり取りはSocket,Serial通信で行います．  
 ただし，以下の5種類のデータで定義づける必要があります．  
 
 - **Action_id**
@@ -157,6 +162,9 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 **Result_id**とは，**Resultデータ**に対する紐づけidです．  
 **Resultデータ**とは，ロボットから得たデータ(変数)などです．  
 **コメント**とは，コメント記述を入れたい場合に用います．  
+
+<div style="page-break-before:always"></div>  
+
 例えば，挨拶を3回，人数カウントを5人としたロボットがあったとします．この場合，データの仕様は次のようになります．  
 
 |     データ名     | データ1  | データ2 |
@@ -194,7 +202,9 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 |   **Action名**   |  **ac**   |
 |  **Result_id**   | **re_id** |
 | **Resultデータ** |  **re**   |
-|   **コメント**   |  **co**   |
+|   **コメント**   |  **co**   |  
+
+<div style="page-break-before:always"></div>  
 
 上記のロボットの例の場合は，  
 `{"data":[{"ac_id":1,"ac":"挨拶回数","re_id":1,"re":3,"co":""},{"ac_id":2,"ac":"人数","re_id":2,"re":5,"co":""}]}`  
@@ -214,7 +224,7 @@ http://robotservices.org/rsi_spec.html
 http://tomcat.apache.org/
 - Axis2 v1.7.9
 http://axis.apache.org/axis2/java/core/download.html
-- Java SE Development Kit 8 (JDK)
+- Java SE Development Kit 1.8.0 (JDK)
 http://www.oracle.com/technetwork/opensource/index.html
 - Pleiades All in One 4.7.3a(Eclipse 4.7 Oxygen 3a)
 http://mergedoc.osdn.jp/

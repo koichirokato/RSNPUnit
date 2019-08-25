@@ -25,18 +25,18 @@ E-mail:md18020@shibaura-it.ac.jp
 - [2. ユニットを使用するための準備](#2-ユニットを使用するための準備)
     - [2.1 RSNPユニットの電源投入](#21-rsnpユニットの電源投入)
     - [2.2 RSNPユニットを直接操作する場合](#22-rsnpユニットを直接操作する場合)
-    - [2.2 RSNPユニットとPCとの接続](#22-rsnpユニットとpcとの接続)
-    - [2.3 RSNPユニットに接続する](#23-rsnpユニットに接続する)
+    - [2.3 RSNPユニットとPCとの接続](#23-rsnpユニットとpcとの接続)
+    - [2.4 RSNPユニットに接続する](#24-rsnpユニットに接続する)
         - [ケース1-Linux，Mac OSの場合](#ケース1-linuxmac-osの場合)
         - [ケース2-Windowsの場合](#ケース2-windowsの場合)
-        - [2.3.1 Tera Termのダウンロード＆インストール](#231-tera-termのダウンロード＆インストール)
-        - [2.3.2 RSNPユニットに接続](#232-rsnpユニットに接続)
-        - [2.3.3 Raspberry Piにログイン](#233-raspberry-piにログイン)
+        - [2.4.1 Tera Termのダウンロード＆インストール](#241-tera-termのダウンロード＆インストール)
+        - [2.4.2 RSNPユニットに接続](#242-rsnpユニットに接続)
+        - [2.4.3 Raspberry Piにログイン](#243-raspberry-piにログイン)
         - [ケース1，ケース2-共通](#ケース1ケース2-共通)
-    - [2.4 無線LAN接続設定](#24-無線lan接続設定)
-    - [2.5 java(jdk)のインストール](#25-javajdkのインストール)
-    - [2.6 GitHubからファイルをダウンロード](#26-githubからファイルをダウンロード)
-    - [2.7 propertiesファイルの設定](#27-propertiesファイルの設定)
+    - [2.5 無線LAN接続設定](#25-無線lan接続設定)
+    - [2.6 java(jdk)のインストール](#26-javajdkのインストール)
+    - [2.7 GitHubからファイルをダウンロード](#27-githubからファイルをダウンロード)
+    - [2.8 propertiesファイルの設定](#28-propertiesファイルの設定)
 - [3 RSNPユニットの動作実行](#3-rsnpユニットの動作実行)
     - [3.1 RSNP通信プログラムの実行](#31-rsnp通信プログラムの実行)
     - [3.2 プログラム実行のデーモン化](#32-プログラム実行のデーモン化)
@@ -49,13 +49,13 @@ E-mail:md18020@shibaura-it.ac.jp
     - [3.6 ミドルウエアを使用していない，Serial通信で接続するケース](#36-ミドルウエアを使用していないserial通信で接続するケース)
         - [RSNPユニットに接続する](#rsnpユニットに接続する)
     - [3.7 状態の確認](#37-状態の確認)
-- [4. 通信データ仕様](#4-通信データ仕様)
+- [4. RSNPユニットへの通信データ仕様](#4-rsnpユニットへの通信データ仕様)
 - [5. ライセンス](#5-ライセンス)
 - [参考文献](#参考文献)
 
 <!-- /TOC -->
 
-<div style="page-break-before:always"></div>
+<div style="page-break-before:always"></div>  
 
 ## 1. はじめに  
 
@@ -75,13 +75,15 @@ http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 
 <img src="https://user-images.githubusercontent.com/44587055/63603070-c8592e00-c603-11e9-820d-ba7243321181.png" width=35%>  
 
+<div style="page-break-before:always"></div>  
+
 ### 2.2 RSNPユニットを直接操作する場合  
 
 HDMI接続可能なモニタ，USBtype-Aのキーボード，マウスを用意可能である場合は，下の図のように接続することで，PCのように扱うことが可能です．ただし，環境が初めから整っている場合を以外は，次の2.3節に従って接続することも可能です．  
 
 <img src="https://user-images.githubusercontent.com/44587055/63636425-0f99fa00-c6aa-11e9-9a9b-3b106aa13967.png" width=60%>  
 
-### 2.2 RSNPユニットとPCとの接続  
+### 2.3 RSNPユニットとPCとの接続  
 
 RSNPユニットの初期設定を行うために，PCと有線で接続します．現状，LANケーブルで接続する方法のみがあります． 
 ※この方法で接続する場合，予め設定してあるソフトウェアでないと接続できません．ご利用予定の方は，冒頭の連絡先にご連絡ください．  
@@ -101,25 +103,27 @@ USB-typeAに接続した場合
 
 USB-typeCに接続した場合  
 
-### 2.3 RSNPユニットに接続する  
+### 2.4 RSNPユニットに接続する  
 
 #### ケース1-Linux，Mac OSの場合  
 
 Linuxを使用している場合，次のコマンドを実行することで，RSNPユニットに接続することができます．  
-`~$ ssh raspberrypi`  
+`~$ ssh pi@raspberrypi -p 22`  
 
 #### ケース2-Windowsの場合
 
 RSNPユニットにリモートでSSH接続するためのソフトウェアが必要になります．  
 設定すれば，コマンドプロンプトからRSNPユニットへ接続することもできますが，今回は，ソフトウェアを使用します．クライアントソフトウェアとして**Tera Term**を使用します．  
 
-#### 2.3.1 Tera Termのダウンロード＆インストール  
+#### 2.4.1 Tera Termのダウンロード＆インストール  
   
 以下のサイトより，ダウンロードとインストールを行ってください．  
 **窓の杜 Tera Term**  
 https://forest.watch.impress.co.jp/library/software/utf8teraterm/  
 
-#### 2.3.2 RSNPユニットに接続  
+<div style="page-break-before:always"></div>  
+
+#### 2.4.2 RSNPユニットに接続  
 
 次に，インストールしたTera Termを起動します．  
 
@@ -128,13 +132,15 @@ https://forest.watch.impress.co.jp/library/software/utf8teraterm/
 
 ここで，ホストに"raspberrypi"と，TCPポートに"22"と入力し，"OK"をクリックします．  
 
-#### 2.3.3 Raspberry Piにログイン  
+#### 2.4.3 Raspberry Piにログイン  
 
 次にRaspberry Piにログインをします．  
 上記で"OK"をクリック後に以下のような画面が表示されます．  
  <img src="https://user-images.githubusercontent.com/44587055/58788978-014abd80-8628-11e9-87a8-6826dc60c4a5.png" width=60%>  
 
-ユーザ名に"pi"と，パスフレーズに"8073"と入力し，"OK"をクリックします．
+ユーザ名に"pi"と，パスフレーズに"8073"と入力し，"OK"をクリックします．  
+
+<div style="page-break-before:always"></div>  
 
 #### ケース1，ケース2-共通  
 
@@ -142,7 +148,7 @@ RSNPユニットに接続すると以下のような画面が表示されます�
 
 <img src="https://user-images.githubusercontent.com/44587055/63604122-ffc8da00-c605-11e9-9512-c9dffb785908.png" width=60%>  
 
-### 2.4 無線LAN接続設定  
+### 2.5 無線LAN接続設定  
 
 RSNPユニットに対して，ロボットやデバイスを接続する場合，有線LANで接続します．しかし，RSNP通信自体は現状，無線LANを使用することを前提としています(1. はじめに 図を参照)．そこで，ここでは無線LANの接続設定を行います．  
 まず，接続するルータ等のSSIDとパスワードを調べます．  
@@ -174,19 +180,19 @@ network={
 なお，シャットダウンのコマンドは，以下のとおりです．  
 `~$ sudo poweroff`
 
-以上で，無線LANの設定は終了になります．
+以上で，無線LANの設定は終了になります．  
 
-### 2.5 java(jdk)のインストール  
+<div style="page-break-before:always"></div>  
 
-java(jdk)をインストールします．以下のようにコマンドを入力し実行します．  
+### 2.6 java(jdk)のインストール  
+
+java(jdk)をインストールします．以下のようにコマンドを入力し実行します．  ]
 `~$ sudo apt-get install java-1.8.0-openjdk`  
-
 java(jdk)がインストールされたか念のため確認します．以下のようにコマンドを入力し実行します．  
 `~$ java -version`
-
 これでバージョンが表示されれば，インストール完了です．  
 
-### 2.6 GitHubからファイルをダウンロード  
+### 2.7 GitHubからファイルをダウンロード  
 
 必要なファイルをダウンロードします．  
 まず，任意のディレクトにダウンロードします．  
@@ -199,7 +205,7 @@ java(jdk)がインストールされたか念のため確認します．以下�
 `~$ ls`  
 ダウンロードが成功していれば，`"RSNPUnit"`というディレクトリが存在します．  
 
-### 2.7 propertiesファイルの設定  
+### 2.8 propertiesファイルの設定  
 
 2.5節でダウンロードした`"DataLog"`ディレクトリに移動します．  
 以下のようにコマンドを入力し実行します．  
@@ -229,6 +235,8 @@ port = 8000
 - **port** ： Socket通信のポート番号  
 
 必要に応じて，これらの各パラメータを変更します．  
+
+<div style="page-break-before:always"></div>  
 
 ## 3 RSNPユニットの動作実行  
 
@@ -273,7 +281,6 @@ port = 8000
 | Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
 次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．  
-
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
 `RSNPUnit\RSNPUnitConnector(RTM_rtc)`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを指定してください．  
@@ -290,6 +297,8 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 
 <img src="https://user-images.githubusercontent.com/44587055/63647401-b5597180-c75b-11e9-9715-994c98419a74.png" width=45%>  
 
+<div style="page-break-before:always"></div>  
+
 ### 3.4 ROSでの接続を行うケース  
 
 ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はRSNPUnitConnector，ノード名もRSNPUnitConnectorとなります．  
@@ -301,16 +310,23 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 | Ubuntu 16.04, Ubuntu18.04 | Kinetic, Melodic |
 
 次のURLから"RSNPUnitConnector"をダウンロードをしてください．
-
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．
+subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．  
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでnodeを起動するために次のようにXMLファイルを記述する必要があります．
-ROS lauchファイルを記述する．
-コンフィグレーションパラメータを次のように設定します．  
+設定したパラメータでnodeを起動するために，次のようにroslaunchのXMLファイルを記述する必要があります．  
+
+~~~text
+<launch>
+    <rosparam command="load" file="$ ~/RSNPUnit/RSNPUnitConnector(ROS_pkg)/Config.yaml" >
+<launch>
+~~~  
+
+また，Config.yamlの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．  
+
+<div style="page-break-before:always"></div>  
 
 ### 3.5 ミドルウエアを使用していない，Socket通信で接続するケース  
 
@@ -319,12 +335,14 @@ ROS lauchファイルを記述する．
 <img src="https://user-images.githubusercontent.com/44587055/63647183-580ff100-c758-11e9-8fe6-68b29c98bb44.png" width=50%>  
 
 次のURLからサンプルソースコードをダウンロードをしてください．
-
 https://github.com/SatoshiOkano/RSNPUnit.git  
+
+`RSNPUnit\RSNPUnitConnector(Socket_sample)`内の`Socket_sam.py`がサンプルソースコードとなります．  
+`Config.ini`は，パラメータ設定ファイルとなります．  
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniを次のように設定します．  
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.6 ミドルウエアを使用していない，Serial通信で接続するケース  
 
@@ -333,12 +351,13 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 <img src="https://user-images.githubusercontent.com/44587055/63647186-6fe77500-c758-11e9-8daf-3ce94a0ca5f1.png" width=50%>  
 
 次のURLからサンプルソースコードをダウンロードをしてください．
-
 https://github.com/SatoshiOkano/RSNPUnit.git  
+
+`RSNPUnit\RSNPUnitConnector(Serial_sample)`内の`Serial_sam.py`がサンプルソースコードとなります．  `Config.ini`は，パラメータ設定ファイルとなります．  
 
 #### RSNPユニットに接続する  
 
-コンフィグレーションパラメータを次のように設定します．  
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.7 状態の確認  
 
@@ -356,7 +375,7 @@ robot_id=2のロボットを稼働させた例を下の図に示す．
 
 他にもロボットの画像に差し替えたり，表示するデータの種類も変更して表示情報を変更することができます．  
 
-## 4. 通信データ仕様
+## 4. RSNPユニットへの通信データ仕様
 
 RSNPユニットからロボットまたはデバイス間のデータのやり取りはSocket,Serial通信で行います．  
 送信データは現状，**文字列型データ**です．ただし，以下の5種類のデータで定義づける必要があります．  
