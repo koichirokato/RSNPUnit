@@ -1,0 +1,7 @@
+2019-08-25 13:11:22,734 file.manager INFO 1.2.0
+2019-08-25 13:11:22,734 file.manager INFO Copyright (C) 2003-2010
+2019-08-25 13:11:22,734 file.manager INFO   Noriaki Ando
+2019-08-25 13:11:22,734 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-25 13:11:22,734 file.manager INFO Manager starting.
+2019-08-25 13:11:22,736 file.manager INFO Starting local logging.
+2019-08-25 13:11:22,743 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost

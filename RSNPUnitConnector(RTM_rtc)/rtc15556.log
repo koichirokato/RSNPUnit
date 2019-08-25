@@ -1,0 +1,16 @@
+2019-08-25 13:14:09,125 file.manager INFO 1.2.0
+2019-08-25 13:14:09,125 file.manager INFO Copyright (C) 2003-2010
+2019-08-25 13:14:09,125 file.manager INFO   Noriaki Ando
+2019-08-25 13:14:09,125 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-25 13:14:09,125 file.manager INFO Manager starting.
+2019-08-25 13:14:09,125 file.manager INFO Starting local logging.
+2019-08-25 13:14:09,131 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-25 13:14:11,142 file.ManagerServant INFO Master manager not found
+2019-08-25 13:14:11,145 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-25 13:14:11,158 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-25 13:14:11,164 file.ec_base INFO setRate(1000000.000000) done
+2019-08-25 13:14:11,164 file.ec_base INFO setRate(1000.000000) done
+2019-08-25 13:14:11,165 file.rtobject INFO 1 execution context was created.
+2019-08-25 13:14:11,167 file.rtobject INFO Initial active configuration set is default.
+2019-08-25 13:14:23,250 file.ManagerServant INFO Master manager not found
+2019-08-25 13:14:35,359 file.ManagerServant INFO Master manager not found

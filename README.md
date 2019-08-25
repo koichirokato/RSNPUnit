@@ -71,8 +71,9 @@ http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 
 ### 2.1 RSNPユニットの電源投入  
 
-まず，RSNPユニットの電源を入れます．電源ボタンは搭載していないため以下の図に示すように，microUSBにusbケーブルを接続します．  
-<img src="https://user-images.githubusercontent.com/44587055/63603070-c8592e00-c603-11e9-820d-ba7243321181.png" width=45%>  
+まず，RSNPユニットの電源を入れます．電源ボタンは搭載していないため以下の図に示すように，microUSBにusbケーブルを接続します．OSをシャットダウンしたら，ケーブルを抜いてください．  
+
+<img src="https://user-images.githubusercontent.com/44587055/63603070-c8592e00-c603-11e9-820d-ba7243321181.png" width=35%>  
 
 ### 2.2 RSNPユニットを直接操作する場合  
 
@@ -261,10 +262,13 @@ port = 8000
 
 ### 3.3 RTミドルウエアでの接続を行うケース  
 
-ロボットまたはデバイスがRTミドルウエアを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．
+ロボットまたはデバイスがRTミドルウエアを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．  
+
+<img src="https://user-images.githubusercontent.com/44587055/63647106-7a553f00-c757-11e9-85ab-3d12445eaf94.png" width=50%>  
+
 以下の各バージョンで動作確認済みです．  
 
-|               OS                | OpenRTM-aist |
+|               OS                | OpenRTM-aist ver. |
 | :-----------------------------: | :----------: |
 | Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
@@ -272,10 +276,13 @@ port = 8000
 
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-RTSystemEditor上で，RTCは次の表のように表示されます．  
+`RSNPUnit\RSNPUnitConnector(RTM_rtc)`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを指定してください．  
+
+RSNPUnitConnector RTCの仕様は，次の表のとおりです．  
+
 <img src="https://user-images.githubusercontent.com/44587055/63603822-5386f380-c605-11e9-8deb-563cd069e728.png" width=40%>  
 
-Inportには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，TimedString型のInportを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．
+SampleDataIn(Inport)には，フォーマットに準拠したデータを送る必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，TimedString型のInportを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．
 
 #### RSNPユニットに接続する  
 
@@ -283,7 +290,15 @@ Inportには，フォーマットに準拠したデータを入れる必要が�
 
 ### 3.4 ROSでの接続を行うケース  
 
-ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はRSNPUnitConnector，ノード名はrsnpunitconnectorとなります．次のURLから"RSNPUnitConnector"をダウンロードをしてください．
+ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はRSNPUnitConnector，ノード名もRSNPUnitConnectorとなります．  
+
+<img src="https://user-images.githubusercontent.com/44587055/63647169-197a3680-c758-11e9-946c-e9c56fe8ace9.png" width=50%>  
+
+|               OS                | ROS ver. |
+| :-----------------------------: | :----------: |
+| Ubuntu 16.04, Ubuntu18.04 | Kinetic, Melodic |
+
+次のURLから"RSNPUnitConnector"をダウンロードをしてください．
 
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
@@ -298,6 +313,8 @@ ROS lauchファイルを記述する．
 
 ロボットまたはデバイスがミドルウエアを実装していない場合，こちらのサンプルソースコードをもとに実装してください．サンプルソースコードは次にあります．  
 
+<img src="https://user-images.githubusercontent.com/44587055/63647183-580ff100-c758-11e9-8fe6-68b29c98bb44.png" width=50%>
+
 #### RSNPユニットに接続する  
 
 コンフィグレーションパラメータを次のように設定します．  
@@ -306,26 +323,32 @@ ROS lauchファイルを記述する．
 
 ロボットまたはデバイスがミドルウエアを実装していない場合，こちらのサンプルソースコードをもとに実装してください．サンプルソースコードは次にあります．  
 
+<img src="https://user-images.githubusercontent.com/44587055/63647186-6fe77500-c758-11e9-8daf-3ce94a0ca5f1.png" width=50%>
+
 #### RSNPユニットに接続する  
 
 コンフィグレーションパラメータを次のように設定します． 
 
 ### 3.7 状態の確認  
 
-ロボットまたはデバイスからRSNPユニットにデータを送信すると，RSNPでサーバに送信される．
+ロボットまたはデバイスからRSNPユニットにデータを送信すると，RSNPでサーバに送信されます．
 サーバにアクセスすることでWebブラウザ上に状態が反映されているか確認することができます．  
 
-以下のURLにアクセスすることで確認することができます．  
+デフォルト設定のままの場合，以下のURLにアクセスすることで確認することができます．  
 http://robots.aiit.ac.jp:8080/Robomech2019/  
 
 以下のようにブラウザ上で表示されていれば，確認完了です．  
-robot_id=1のロボットを稼働させた例を下の図に示す．  
+今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
+
+robot_id=2のロボットを稼働させた例を下の図に示す．  
 <img src="https://user-images.githubusercontent.com/44587055/58847016-4caeab80-86bc-11e9-9b39-e87f95fe140a.png" width=60%>  
+
+他にもロボットの画像に差し替えたり，表示するデータの種類も変更して表示情報を変更することができます．  
 
 ## 4. 通信データ仕様
 
 RSNPユニットからロボットまたはデバイス間のデータのやり取りはSocket,Serial通信で行います．  
-ただし，以下の5種類のデータで定義づける必要があります．  
+送信データは現状，**文字列型データ**です．ただし，以下の5種類のデータで定義づける必要があります．  
 
 - **Action_id**
 - **Action名**  
@@ -380,16 +403,18 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 
 上記のロボットの例の場合は，  
 `{"data":[{"ac_id":1,"ac":"挨拶回数","re_id":1,"re":3,"co":""},{"ac_id":2,"ac":"人数","re_id":2,"re":5,"co":""}]}`  
-となります．(コメントは無しのため，空欄("")となっている)  
-複数種類の場合は，配列の成分が増加し，  
+となります(コメントは無しのため，空欄("")となっています)．つまり，最終的にこのデータ形式で**文字列型データ**で送信することになります．  
+データが複数種類の場合は，配列の成分が増加し，  
 ``{"data":[{...},{...},{...},...]}``  
-となる．今回は5種類まで対応している．  
+となります．今回は5種類まで対応しています．  
 
 ## 5. ライセンス  
+
 本プロジェクトで作成したソフトウェアのライセンスは，MIT Licenseとなります．  
 https://github.com/SatoshiOkano/RSNPUnit/blob/master/LICENSE  
 
 ## 参考文献  
+
 [1] NEDO "2035年までのロボット産業の将来市場予測"，http://www.nedo.go.jp/content/100080673.pdf, 最終閲覧日2019年8月20日  
 [2] ロボットサービスイニシアチブ，Robot Service Network Protocol2.3 仕様書 第1.0版，2010  
 [3] OpenRTM-aist, https://openrtm.org/openrtm/ja, 最終閲覧日2019年8月20日  

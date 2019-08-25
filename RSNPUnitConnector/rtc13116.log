@@ -1,0 +1,216 @@
+2019-08-19 17:24:16,345 file.manager INFO 1.2.0
+2019-08-19 17:24:16,345 file.manager INFO Copyright (C) 2003-2010
+2019-08-19 17:24:16,345 file.manager INFO   Noriaki Ando
+2019-08-19 17:24:16,345 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-19 17:24:16,345 file.manager INFO Manager starting.
+2019-08-19 17:24:16,345 file.manager INFO Starting local logging.
+2019-08-19 17:24:16,351 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-19 17:24:18,371 file.ManagerServant INFO Master manager not found
+2019-08-19 17:24:18,371 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-19 17:24:18,381 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-19 17:24:18,388 file.ec_base INFO setRate(1000000.000000) done
+2019-08-19 17:24:18,388 file.ec_base INFO setRate(1000.000000) done
+2019-08-19 17:24:18,390 file.rtobject INFO 1 execution context was created.
+2019-08-19 17:24:18,391 file.rtobject INFO Initial active configuration set is default.
+2019-08-19 17:24:20,563 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-19 17:24:20,563 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-19 17:24:23,582 file.ec_base WARNING The component is not responding.
+2019-08-19 17:24:23,582 file.ec_base ERROR Unknown error: Invalid state transition.
+2019-08-19 17:24:24,086 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。
+
+2019-08-19 17:24:30,453 file.ManagerServant INFO Master manager not found
+2019-08-19 17:24:42,543 file.ManagerServant INFO Master manager not found
+2019-08-19 17:24:54,608 file.ManagerServant INFO Master manager not found
+2019-08-19 17:25:06,674 file.ManagerServant INFO Master manager not found
+2019-08-19 17:25:18,744 file.ManagerServant INFO Master manager not found
+2019-08-19 17:25:27,236 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "C:\Python27\lib\socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+
+2019-08-19 17:25:30,832 file.ManagerServant INFO Master manager not found
+2019-08-19 17:25:42,924 file.ManagerServant INFO Master manager not found
+2019-08-19 17:25:55,003 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:07,081 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:19,141 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:31,232 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:43,328 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:55,401 file.ManagerServant INFO Master manager not found
+2019-08-19 17:26:56,124 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "C:\Python27\lib\socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+
+2019-08-19 17:27:07,476 file.ManagerServant INFO Master manager not found
+2019-08-19 17:27:19,565 file.ManagerServant INFO Master manager not found
+2019-08-19 17:27:31,642 file.ManagerServant INFO Master manager not found
+2019-08-19 17:27:43,717 file.ManagerServant INFO Master manager not found
+2019-08-19 17:27:55,815 file.ManagerServant INFO Master manager not found
+2019-08-19 17:28:07,887 file.ManagerServant INFO Master manager not found
+2019-08-19 17:28:19,948 file.ManagerServant INFO Master manager not found
+2019-08-19 17:28:32,013 file.ManagerServant INFO Master manager not found
+2019-08-19 17:28:44,101 file.ManagerServant INFO Master manager not found
+2019-08-19 17:28:56,163 file.ManagerServant INFO Master manager not found
+2019-08-19 17:29:08,242 file.ManagerServant INFO Master manager not found
+2019-08-19 17:29:20,315 file.ManagerServant INFO Master manager not found
+2019-08-19 17:29:32,380 file.ManagerServant INFO Master manager not found
+2019-08-19 17:29:44,446 file.ManagerServant INFO Master manager not found
+2019-08-19 17:29:56,519 file.ManagerServant INFO Master manager not found
+2019-08-19 17:30:08,592 file.ManagerServant INFO Master manager not found
+2019-08-19 17:30:20,664 file.ManagerServant INFO Master manager not found
+2019-08-19 17:30:32,730 file.ManagerServant INFO Master manager not found
+2019-08-19 17:30:44,799 file.ManagerServant INFO Master manager not found
+2019-08-19 17:30:56,875 file.ManagerServant INFO Master manager not found
+2019-08-19 17:31:08,948 file.ManagerServant INFO Master manager not found
+2019-08-19 17:31:10,516 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "C:\Python27\lib\socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+
+2019-08-19 17:31:21,029 file.ManagerServant INFO Master manager not found
+2019-08-19 17:31:33,112 file.ManagerServant INFO Master manager not found
+2019-08-19 17:31:45,186 file.ManagerServant INFO Master manager not found
+2019-08-19 17:31:57,259 file.ManagerServant INFO Master manager not found
+2019-08-19 17:32:09,326 file.ManagerServant INFO Master manager not found
+2019-08-19 17:32:21,398 file.ManagerServant INFO Master manager not found
+2019-08-19 17:32:33,473 file.ManagerServant INFO Master manager not found
+2019-08-19 17:32:45,542 file.ManagerServant INFO Master manager not found
+2019-08-19 17:32:57,604 file.ManagerServant INFO Master manager not found
+2019-08-19 17:33:09,681 file.ManagerServant INFO Master manager not found
+2019-08-19 17:33:21,746 file.ManagerServant INFO Master manager not found
+2019-08-19 17:33:33,825 file.ManagerServant INFO Master manager not found
+2019-08-19 17:33:45,900 file.ManagerServant INFO Master manager not found
+2019-08-19 17:33:57,963 file.ManagerServant INFO Master manager not found
+2019-08-19 17:34:10,045 file.ManagerServant INFO Master manager not found
+2019-08-19 17:34:22,114 file.ManagerServant INFO Master manager not found
+2019-08-19 17:34:34,167 file.ManagerServant INFO Master manager not found
+2019-08-19 17:34:46,226 file.ManagerServant INFO Master manager not found
+2019-08-19 17:34:58,296 file.ManagerServant INFO Master manager not found
+2019-08-19 17:35:10,361 file.ManagerServant INFO Master manager not found
+2019-08-19 17:35:22,436 file.ManagerServant INFO Master manager not found
+2019-08-19 17:35:34,493 file.ManagerServant INFO Master manager not found
+2019-08-19 17:35:46,558 file.ManagerServant INFO Master manager not found
+2019-08-19 17:35:58,628 file.ManagerServant INFO Master manager not found
+2019-08-19 17:36:10,690 file.ManagerServant INFO Master manager not found
+2019-08-19 17:36:22,759 file.ManagerServant INFO Master manager not found
+2019-08-19 17:36:34,828 file.ManagerServant INFO Master manager not found
+2019-08-19 17:36:46,901 file.ManagerServant INFO Master manager not found
+2019-08-19 17:36:58,970 file.ManagerServant INFO Master manager not found
+2019-08-19 17:37:11,043 file.ManagerServant INFO Master manager not found
+2019-08-19 17:37:23,132 file.ManagerServant INFO Master manager not found
+2019-08-19 17:37:35,213 file.ManagerServant INFO Master manager not found
+2019-08-19 17:37:47,285 file.ManagerServant INFO Master manager not found
+2019-08-19 17:37:59,368 file.ManagerServant INFO Master manager not found
+2019-08-19 17:38:11,430 file.ManagerServant INFO Master manager not found
+2019-08-19 17:38:23,493 file.ManagerServant INFO Master manager not found
+2019-08-19 17:38:35,572 file.ManagerServant INFO Master manager not found
+2019-08-19 17:38:47,642 file.ManagerServant INFO Master manager not found
+2019-08-19 17:38:59,720 file.ManagerServant INFO Master manager not found
+2019-08-19 17:39:11,793 file.ManagerServant INFO Master manager not found
+2019-08-19 17:39:23,861 file.ManagerServant INFO Master manager not found
+2019-08-19 17:39:35,947 file.ManagerServant INFO Master manager not found
+2019-08-19 17:39:48,025 file.ManagerServant INFO Master manager not found
+2019-08-19 17:40:00,086 file.ManagerServant INFO Master manager not found
+2019-08-19 17:40:12,138 file.ManagerServant INFO Master manager not found
+2019-08-19 17:40:24,210 file.ManagerServant INFO Master manager not found
+2019-08-19 17:40:36,269 file.ManagerServant INFO Master manager not found
+2019-08-19 17:40:48,365 file.ManagerServant INFO Master manager not found
+2019-08-19 17:41:00,443 file.ManagerServant INFO Master manager not found
+2019-08-19 17:41:12,506 file.ManagerServant INFO Master manager not found
+2019-08-19 17:41:24,563 file.ManagerServant INFO Master manager not found
+2019-08-19 17:41:36,621 file.ManagerServant INFO Master manager not found
+2019-08-19 17:41:48,707 file.ManagerServant INFO Master manager not found
+2019-08-19 17:42:00,776 file.ManagerServant INFO Master manager not found
+2019-08-19 17:42:12,849 file.ManagerServant INFO Master manager not found
+2019-08-19 17:42:24,904 file.ManagerServant INFO Master manager not found
+2019-08-19 17:42:36,969 file.ManagerServant INFO Master manager not found
+2019-08-19 17:42:49,036 file.ManagerServant INFO Master manager not found
+2019-08-19 17:43:01,127 file.ManagerServant INFO Master manager not found
+2019-08-19 17:43:13,191 file.ManagerServant INFO Master manager not found
+2019-08-19 17:43:25,278 file.ManagerServant INFO Master manager not found
+2019-08-19 17:43:37,338 file.ManagerServant INFO Master manager not found
+2019-08-19 17:43:49,405 file.ManagerServant INFO Master manager not found
+2019-08-19 17:44:01,483 file.ManagerServant INFO Master manager not found
+2019-08-19 17:44:13,558 file.ManagerServant INFO Master manager not found
+2019-08-19 17:44:25,634 file.ManagerServant INFO Master manager not found
+2019-08-19 17:44:37,713 file.ManagerServant INFO Master manager not found
+2019-08-19 17:44:49,796 file.ManagerServant INFO Master manager not found
+2019-08-19 17:45:01,875 file.ManagerServant INFO Master manager not found
+2019-08-19 17:45:13,941 file.ManagerServant INFO Master manager not found
+2019-08-19 17:45:26,030 file.ManagerServant INFO Master manager not found
+2019-08-19 17:45:38,089 file.ManagerServant INFO Master manager not found
+2019-08-19 17:45:50,164 file.ManagerServant INFO Master manager not found
+2019-08-19 17:46:02,233 file.ManagerServant INFO Master manager not found
+2019-08-19 17:46:14,323 file.ManagerServant INFO Master manager not found
+2019-08-19 17:46:26,401 file.ManagerServant INFO Master manager not found
+2019-08-19 17:46:38,467 file.ManagerServant INFO Master manager not found
+2019-08-19 17:46:50,539 file.ManagerServant INFO Master manager not found
+2019-08-19 17:47:02,614 file.ManagerServant INFO Master manager not found
+2019-08-19 17:47:14,714 file.ManagerServant INFO Master manager not found
+2019-08-19 17:47:26,769 file.ManagerServant INFO Master manager not found
+2019-08-19 17:47:38,835 file.ManagerServant INFO Master manager not found
+2019-08-19 17:47:50,907 file.ManagerServant INFO Master manager not found
+2019-08-19 17:48:02,967 file.ManagerServant INFO Master manager not found
+2019-08-19 17:48:15,042 file.ManagerServant INFO Master manager not found
+2019-08-19 17:48:27,108 file.ManagerServant INFO Master manager not found
+2019-08-19 17:48:39,181 file.ManagerServant INFO Master manager not found
+2019-08-19 17:48:47,045 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "C:\Python27\lib\socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+
+2019-08-19 17:48:51,269 file.ManagerServant INFO Master manager not found
+2019-08-19 17:49:03,344 file.ManagerServant INFO Master manager not found
+2019-08-19 17:49:15,400 file.ManagerServant INFO Master manager not found
+2019-08-19 17:49:27,469 file.ManagerServant INFO Master manager not found
+2019-08-19 17:49:39,539 file.ManagerServant INFO Master manager not found
+2019-08-19 17:49:51,614 file.ManagerServant INFO Master manager not found
+2019-08-19 17:50:03,687 file.ManagerServant INFO Master manager not found
+2019-08-19 17:50:15,760 file.ManagerServant INFO Master manager not found
+2019-08-19 17:50:27,825 file.ManagerServant INFO Master manager not found
+2019-08-19 17:50:32,621 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 117, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "C:\Python27\lib\socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+
+2019-08-19 17:50:38,648 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-19 17:50:38,651 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-19 17:50:38,651 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.
+2019-08-19 17:50:39,904 file.ManagerServant INFO Master manager not found

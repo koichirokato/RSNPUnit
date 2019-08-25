@@ -1,0 +1,54 @@
+2019-08-20 20:00:09,487 file.manager INFO 1.2.0
+2019-08-20 20:00:09,487 file.manager INFO Copyright (C) 2003-2010
+2019-08-20 20:00:09,487 file.manager INFO   Noriaki Ando
+2019-08-20 20:00:09,489 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-20 20:00:09,489 file.manager INFO Manager starting.
+2019-08-20 20:00:09,489 file.manager INFO Starting local logging.
+2019-08-20 20:00:09,494 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-20 20:00:11,507 file.ManagerServant INFO Master manager not found
+2019-08-20 20:00:11,509 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-20 20:00:11,519 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-20 20:00:11,526 file.ec_base INFO setRate(1000000.000000) done
+2019-08-20 20:00:11,528 file.ec_base INFO setRate(1000.000000) done
+2019-08-20 20:00:11,528 file.rtobject INFO 1 execution context was created.
+2019-08-20 20:00:11,529 file.rtobject INFO Initial active configuration set is default.
+2019-08-20 20:00:12,861 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-20 20:00:12,861 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-20 20:00:23,569 file.ManagerServant INFO Master manager not found
+2019-08-20 20:00:28,688 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 148, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+AttributeError: 'RSNPUnitConnector' object has no attribute '_Port'
+
+2019-08-20 20:00:35,658 file.ManagerServant INFO Master manager not found
+2019-08-20 20:00:47,750 file.ManagerServant INFO Master manager not found
+2019-08-20 20:00:50,358 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 148, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+AttributeError: 'RSNPUnitConnector' object has no attribute '_Port'
+
+2019-08-20 20:00:59,845 file.ManagerServant INFO Master manager not found
+2019-08-20 20:01:11,923 file.ManagerServant INFO Master manager not found
+2019-08-20 20:01:24,019 file.ManagerServant INFO Master manager not found
+2019-08-20 20:01:36,084 file.ManagerServant INFO Master manager not found
+2019-08-20 20:01:48,168 file.ManagerServant INFO Master manager not found
+2019-08-20 20:01:59,375 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 148, in onActivated
+    self._Sock.connect((self._IPaddress[0], self._Port[0]))
+AttributeError: 'RSNPUnitConnector' object has no attribute '_Port'
+
+2019-08-20 20:02:00,243 file.ManagerServant INFO Master manager not found
+2019-08-20 20:02:12,371 file.ManagerServant INFO Master manager not found
+2019-08-20 20:02:24,506 file.ManagerServant INFO Master manager not found
+2019-08-20 20:02:36,614 file.ManagerServant INFO Master manager not found
+2019-08-20 20:02:48,734 file.ManagerServant INFO Master manager not found
+2019-08-20 20:03:00,845 file.ManagerServant INFO Master manager not found
+2019-08-20 20:03:12,959 file.ManagerServant INFO Master manager not found
+2019-08-20 20:03:25,065 file.ManagerServant INFO Master manager not found
+2019-08-20 20:03:37,180 file.ManagerServant INFO Master manager not found

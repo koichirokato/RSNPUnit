@@ -1,0 +1,86 @@
+2019-08-19 17:56:19,913 file.manager INFO 1.2.0
+2019-08-19 17:56:19,913 file.manager INFO Copyright (C) 2003-2010
+2019-08-19 17:56:19,913 file.manager INFO   Noriaki Ando
+2019-08-19 17:56:19,913 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-19 17:56:19,913 file.manager INFO Manager starting.
+2019-08-19 17:56:19,913 file.manager INFO Starting local logging.
+2019-08-19 17:56:19,918 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-19 17:56:21,948 file.ManagerServant INFO Master manager not found
+2019-08-19 17:56:21,950 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-19 17:56:21,954 file.manager INFO Component type conf file: RSNPUnitConnector.conf loaded.
+2019-08-19 17:56:21,963 file.ec_base INFO setRate(1000000.000000) done
+2019-08-19 17:56:21,963 file.ec_base INFO setRate(1000.000000) done
+2019-08-19 17:56:21,963 file.rtobject INFO 1 execution context was created.
+2019-08-19 17:56:21,964 file.rtobject INFO Initial active configuration set is default.
+2019-08-19 17:56:25,065 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-19 17:56:25,065 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-19 17:56:34,005 file.ManagerServant INFO Master manager not found
+2019-08-19 17:56:46,065 file.ManagerServant INFO Master manager not found
+2019-08-19 17:56:58,177 file.ManagerServant INFO Master manager not found
+2019-08-19 17:57:10,316 file.ManagerServant INFO Master manager not found
+2019-08-19 17:57:22,434 file.ManagerServant INFO Master manager not found
+2019-08-19 17:57:34,549 file.ManagerServant INFO Master manager not found
+2019-08-19 17:57:46,676 file.ManagerServant INFO Master manager not found
+2019-08-19 17:57:58,790 file.ManagerServant INFO Master manager not found
+2019-08-19 17:58:10,905 file.ManagerServant INFO Master manager not found
+2019-08-19 17:58:23,012 file.ManagerServant INFO Master manager not found
+2019-08-19 17:58:35,135 file.ManagerServant INFO Master manager not found
+2019-08-19 17:58:47,250 file.ManagerServant INFO Master manager not found
+2019-08-19 17:58:59,375 file.ManagerServant INFO Master manager not found
+2019-08-19 17:59:00,434 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTObject.py", line 1571, in on_execute
+    ret = self.onExecute(ec_id)
+  File "C:\workspace\RSNPUnitConnector\RSNPUnitConnector.py", line 136, in onExecute
+    _d_SampleDataIn.data = self._SampleDataInIn.read()
+NameError: global name '_d_SampleDataIn' is not defined
+
+2019-08-19 17:59:11,480 file.ManagerServant INFO Master manager not found
+2019-08-19 17:59:23,592 file.ManagerServant INFO Master manager not found
+2019-08-19 17:59:35,707 file.ManagerServant INFO Master manager not found
+2019-08-19 17:59:47,792 file.ManagerServant INFO Master manager not found
+2019-08-19 17:59:59,867 file.ManagerServant INFO Master manager not found
+2019-08-19 18:00:11,934 file.ManagerServant INFO Master manager not found
+2019-08-19 18:00:24,016 file.ManagerServant INFO Master manager not found
+2019-08-19 18:00:36,108 file.ManagerServant INFO Master manager not found
+2019-08-19 18:00:48,188 file.ManagerServant INFO Master manager not found
+2019-08-19 18:01:00,259 file.ManagerServant INFO Master manager not found
+2019-08-19 18:01:12,325 file.ManagerServant INFO Master manager not found
+2019-08-19 18:01:24,392 file.ManagerServant INFO Master manager not found
+2019-08-19 18:01:36,461 file.ManagerServant INFO Master manager not found
+2019-08-19 18:01:48,523 file.ManagerServant INFO Master manager not found
+2019-08-19 18:02:00,582 file.ManagerServant INFO Master manager not found
+2019-08-19 18:02:12,651 file.ManagerServant INFO Master manager not found
+2019-08-19 18:02:24,723 file.ManagerServant INFO Master manager not found
+2019-08-19 18:02:36,806 file.ManagerServant INFO Master manager not found
+2019-08-19 18:02:48,884 file.ManagerServant INFO Master manager not found
+2019-08-19 18:03:00,953 file.ManagerServant INFO Master manager not found
+2019-08-19 18:03:13,026 file.ManagerServant INFO Master manager not found
+2019-08-19 18:03:25,092 file.ManagerServant INFO Master manager not found
+2019-08-19 18:03:37,174 file.ManagerServant INFO Master manager not found
+2019-08-19 18:03:49,259 file.ManagerServant INFO Master manager not found
+2019-08-19 18:04:01,328 file.ManagerServant INFO Master manager not found
+2019-08-19 18:04:13,392 file.ManagerServant INFO Master manager not found
+2019-08-19 18:04:25,463 file.ManagerServant INFO Master manager not found
+2019-08-19 18:04:37,530 file.ManagerServant INFO Master manager not found
+2019-08-19 18:04:49,599 file.ManagerServant INFO Master manager not found
+2019-08-19 18:05:01,674 file.ManagerServant INFO Master manager not found
+2019-08-19 18:05:13,744 file.ManagerServant INFO Master manager not found
+2019-08-19 18:05:25,805 file.ManagerServant INFO Master manager not found
+2019-08-19 18:05:37,875 file.ManagerServant INFO Master manager not found
+2019-08-19 18:05:49,944 file.ManagerServant INFO Master manager not found
+2019-08-19 18:06:02,017 file.ManagerServant INFO Master manager not found
+2019-08-19 18:06:14,082 file.ManagerServant INFO Master manager not found
+2019-08-19 18:06:26,164 file.ManagerServant INFO Master manager not found
+2019-08-19 18:06:38,226 file.ManagerServant INFO Master manager not found
+2019-08-19 18:06:50,305 file.ManagerServant INFO Master manager not found
+2019-08-19 18:07:02,394 file.ManagerServant INFO Master manager not found
+2019-08-19 18:07:14,467 file.ManagerServant INFO Master manager not found
+2019-08-19 18:07:26,536 file.ManagerServant INFO Master manager not found
+2019-08-19 18:07:38,615 file.ManagerServant INFO Master manager not found
+2019-08-19 18:07:50,676 file.ManagerServant INFO Master manager not found
+2019-08-19 18:08:02,769 file.ManagerServant INFO Master manager not found
+2019-08-19 18:08:14,836 file.ManagerServant INFO Master manager not found
+2019-08-19 18:08:26,930 file.ManagerServant INFO Master manager not found
+2019-08-19 18:08:33,660 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-19 18:08:33,667 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-19 18:08:33,667 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.

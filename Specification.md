@@ -44,11 +44,15 @@ http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
   
 ## 2. RSNPユニットハードウェア仕様  
 
-RSNPユニットは，マイコンとしてRSコンポーネンツ製"RaspberryPi 3 Model B"を使用している．また，バッテリとしてTEC社製"TMB-4K"を使用している．  
+RSNPユニットは，マイコンとしてRSコンポーネンツ製"RaspberryPi 3 Model B"を使用している．また，バッテリとしてTEC社製"TMB-4K"を使用している．RSNPユニットとして，RaspberryPi，バッテリとケースを提供しているが，javaプログラムが実行できればよいので，あくまで一例としての構成である．  
 
 #### ケース装着時  
 
-- 寸法：135 x 75 x 40 mm
+上部にRaspberryPi，下部にバッテリを搭載し，一体型となっている．  
+
+- 寸法：135 x 75 x 40 mm  
+
+<img src="https://user-images.githubusercontent.com/44587055/63645894-a31f0980-c742-11e9-94e4-d7e77b00d7db.png" width=30%>  
 
 #### バッテリ仕様  
 
@@ -57,7 +61,6 @@ RSNPユニットは，マイコンとしてRSコンポーネンツ製"RaspberryP
 - 出力：DC5V, 2.5A
 - 稼働時間：4~5時間
 - 寸法：116 x 67 x 8 mm
-
 
 <img src="https://user-images.githubusercontent.com/44587055/63618175-64942c80-c626-11e9-9fd7-3f6fa51db7e6.png" width=30%>  
 
@@ -83,7 +86,7 @@ RSNPユニットは，マイコンとしてRSコンポーネンツ製"RaspberryP
 
 ## 3. RSNPユニットソフトウェア仕様  
 
-RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプリケーションにより，RSNPユニットが動作時に，Socket通信用のサーバとRSNP通信用クライアントが立ち上がっている．ここへ，ロボットやデバイス上で立ち上げたRTMのRTC，ROSのnode，SocketのClientやSerialのクライアントを接続することで通信を行う．また，フォーマットに準拠したデータを送信することで，XML形式に変換し，Information_profileのnotify_stateで送信する．
+RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプリケーションにより，RSNPユニットが動作時に，Socket通信用のサーバとRSNP通信用クライアントが立ち上がっている．ここへ，ロボットやデバイス上で立ち上げたRTMのRTC，ROSのnode，SocketのClientやSerialのクライアントを接続することで通信を行う．また，フォーマットに準拠したデータを送信することで，XML形式に変換し，プロファイルとしてInformation_profileのオペレーションとしてnotify_stateでデータ送信する．
 
 <img src="https://user-images.githubusercontent.com/44587055/63586957-b5336780-c5dd-11e9-8184-1be7d9997875.png" width=45%>  
 
@@ -101,7 +104,7 @@ RSNPユニット上ではRSNPNotifi.jarが実行されている．このアプ�
 
 サーバ内部でのプロセスは次のようになっている．各ロボットに取り付けられたRSNPユニットからnotify_stateでXML形式のデータを送信する．WebサービスフレームワークであるApach Tomcat上で，実行しているRSNPライブラリを実装したWebアプリケーションで，受信した各データをデータベースであるmySQLに登録，蓄積される．この登録されているデータから，必要なデータを取得し，json形式に変換する．ロボット画面表示用のプロセスが実行しているところへ，端末からサーバにリクエストを投げることで，json形式のデータから各ロボットの状態データをWeb表示上で見ることができる．
 
-<img src="https://user-images.githubusercontent.com/44587055/63616596-de2a1b80-c622-11e9-8a93-dc3ee79f9575.png" width=45%>  
+<img src="https://user-images.githubusercontent.com/44587055/63645967-9dc2be80-c744-11e9-868a-c85b32d91e06.png" width=60%>  
 
 ソフトウェア要件は次の表に示すとおりである．  
 
