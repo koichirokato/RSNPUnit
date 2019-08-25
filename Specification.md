@@ -41,6 +41,8 @@ E-mail:md18020@shibaura-it.ac.jp
 
 **※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．**  
 http://robots.aiit.ac.jp:8080/UpdateNotificationState/services  
+
+<div style="page-break-before:always"></div>  
   
 ## 2. RSNPユニットハードウェア仕様  
 
