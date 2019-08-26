@@ -244,14 +244,14 @@ port = 8000
 
 ### 3.1 RSNP通信プログラムの実行  
 
-まず，`"RSNPcomms.jar"`を実行します．  
+まず，`"RSNPNotifi.jar"`を実行します．  
 `~$ cd`でホームディレクトリに移動します．  
 `RSNPUnit`ディレクトリに移動するため，以下のようにコマンドを入力します．  
 `~$ cd ~/RSNPUnit/`  
 ※RSNPUnitSystemDirの場所によって異なるので注意してください．
 
 次に，実行するために以下のようにコマンドを入力します．  
-`~$ java -jar RSNPcomms.jar`  
+`~$ java -jar RSNPNotifi.jar`  
 
 停止するときは，"Ctrl"+"c"キーを入力することで停止します．  
 
