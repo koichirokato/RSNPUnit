@@ -38,7 +38,8 @@ def main():
         # send data to RSNPUnit by Socket communication
         Socket_client.send(send_sample_data_str)
 
-        print(send_sample_data_str)
+        #only print data
+        print("send_data" + send_sample_data_str)
 
 
 if __name__ == "__main__":
