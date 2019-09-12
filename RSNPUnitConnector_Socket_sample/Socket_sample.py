@@ -12,9 +12,12 @@ def main():
     # setting of configparser object
     config = configparser.ConfigParser()
 
+    # read Config.ini
+    config.read("Config.ini")
+
     # reading parameter of Config.ini
     IPaddress = config['Settings']['IPaddress']
-    Port = config['settings']['Port']
+    Port = config['Settings']['Port']
 
     # setting of socket object
     Socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -34,6 +37,10 @@ def main():
     while True:
 
         time.sleep(2)  #2s interval
+
+        # If you would like to use Python ver.2, please write to change this sentense.
+        # send_sample_data_str.encode("utf-8")
+        # Socket_client.send()
         
         # send data to RSNPUnit by Socket communication
         Socket_client.send(send_sample_data_str)
