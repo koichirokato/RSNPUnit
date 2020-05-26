@@ -1,17 +1,22 @@
 
 <h1> 多種多様なシステムをRSNP通信可能にする<br>汎用ユニットの開発</h1>  
 
-<h2> サービス利用マニュアル Ver.2.0</h2>
+<h2> サービス利用マニュアル Ver.2.8</h2>
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
-本システムをご利用予定の方には別途ソフトウェアの配布を行っています．お手数ですが，下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．  
+本システムをご利用予定の方は，お手数ですが下記の連絡先までご連絡ください．また，改善点などのご意見がある方も，下記の連絡先までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては以下のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの仕様に関しては，以下のURLをご参照ください．各種修正履歴に関しては以下のURLをご参照ください．  
+
+RSiとRSNPに関してURL：http://robotservices.org/  
+RSNPユニットの仕様：https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md  
+各種修正履歴：https://github.com/SatoshiOkano/RSNPUnit/releases
 
 ~~~text  
 連絡先：  
 芝浦工業大学 機械機能工学科 知能機械システム研究室  
 〒135-8548 東京都江東区豊洲3-7-5  
 機械工学専攻 修士2年 岡野　憲 Okano Satoshi  
+TEL:03-5859-8073
 E-mail:md18020@shibaura-it.ac.jp  
 ~~~  
 
@@ -63,7 +68,7 @@ E-mail:md18020@shibaura-it.ac.jp
 <img src="https://user-images.githubusercontent.com/44587055/63586989-c2505680-c5dd-11e9-8ae9-64afd83e85de.png" width=60%>  
 
 **※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．**  
-http://robots.aiit.ac.jp:8080/UpdateNotificationState/services  
+http://robots.aiit.ac.jp:8080/EnqueteRobots2017/services  
   
 ## 2. ユニットを使用するための準備  
 
@@ -108,7 +113,7 @@ USB-typeCに接続した場合
 #### ケース1-Linux，Mac OSの場合  
 
 Linuxを使用している場合，次のコマンドを実行することで，RSNPユニットに接続することができます．  
-`~$ ssh pi@rsnpunit -p 22`  
+`~$ ssh pi@rsnpunit.local -p 22`  
 
 #### ケース2-Windowsの場合
 
@@ -207,7 +212,7 @@ java(jdk)がインストールされたか念のため確認します．以下�
 
 ### 2.8 propertiesファイルの設定  
 
-2.5節でダウンロードした`"DataLog"`ディレクトリに移動します．  
+前節でダウンロードした`"DataLog"`ディレクトリに移動します．  
 以下のようにコマンドを入力し実行します．  
 `~$ cd ~/RSNPUnit/DataLog/`  
 
@@ -220,17 +225,19 @@ java(jdk)がインストールされたか念のため確認します．以下�
 ~~~text
 Configuretion
 robot_id  = 1  
+robot_pw  = 8073  
 end_point = http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 send_interval = 10000
-ip_address = 169.254.183.9
+ip_address = 127.0.0.1
 port = 8000
 ~~~  
 
 各パラメータの意味は，次のようになっています．  
 
-- **robot_id** ： ロボットの識別ID  
+- **robot_id** ： ロボットの識別ID
+- **robot_wd**：  ロボット固有のパスワード
 - **end_point** ： データを送信するサーバのアドレス  
-- **send_interval** ： 送信時間間隔
+- **send_interval** ： 送信時間間隔,単位は[ms]
 - **ip_address** : RSNPユニット本体のIPアドレス
 - **port** ： Socket通信のポート番号  
 
@@ -252,21 +259,32 @@ port = 8000
 
 次に，実行するために以下のようにコマンドを入力します．  
 `~$ java -jar RSNPNotifi.jar`  
+※現状，jdk1.8以下で動作します．jdk10以上では動作しませんのでご注意ください．  
 
 停止するときは，"Ctrl"+"c"キーを入力することで停止します．  
 
 ### 3.2 プログラム実行のデーモン化  
 
-このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要がある．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにする．これをデーモン化という．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
-`~$ sudo rm ~/RSNPUnit/Service/RSNPNotify.service ~/usr/lib/systemd/system/`  
+このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要があります．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにします．これをデーモン化といいます．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
+`~$ sudo cp ~/RSNPUnit/Service/rsnpnotifi.service /etc/systemd/system/`  
+また，起動用のshファイルをコピーします．  
+`~$ sudo cp ~/RSNPUnit/Service/Running.sh /home/pi/`  
+次に．サービスファイルの登録を行います．  
+`~$ sudo systemctl enable rsnpnotifi.service`  
 次に，サービスファイルのリロードをします，次のようにコマンドを入力し実行します．  
 `~$ sudo systemctl daemon-reload`  
 起動します，次のようにコマンドを入力し実行します．  
-`~$ sudo systemctl start RSNPNotify.service`  
+`~$ sudo systemctl start rsnpnotifi.service`  
 サービスが動いているか確認します．次のようにコマンドを入力し実行します．  
-`~$ sudo systemctl status RSNPNotify.service`  
-次回起動時に実行されるように設定します．次のようにコマンドを入力し実行します．
-`~$ sudo systemctl enable RSNPNotify.service`  
+`~$ sudo systemctl status rsnpnotifi.service`  
+これでデーモン化は完了です．  
+deamon.log が大容量になることがあるので、ログ機能をオフにします．  
+`~$ sudo nano /etc/rsyslog.conf`  
+この conf ファイル内の記述を変更します．  
+`daemon.* -/var/log/daemon.log`  
+この記述を探し，コメントアウトします．  
+`#daemon.* -/var/log/daemon.log`  
+ファイルを保存し終了します．  
 
 ### 3.3 RTミドルウエアでの接続を行うケース  
 
@@ -280,10 +298,10 @@ port = 8000
 | :-----------------------------: | :----------: |
 | Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
-次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．  
+次のURLから"RSNPUnitConnector Comp"をダウンロードをしてください．  
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-`RSNPUnit\RSNPUnitConnector(RTM_rtc)`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを指定してください．  
+`RSNPUnit/RSNPUnitConnector_RTM_rtc/RSNPUnitConnectorComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．また，テストデータ送信用RTCとして`SampleSendTest RTC`を用意してあります．任意のデータをコンフィグレーションパラメータに適用することで`RSNPUnitConnector RTC`に送信することができます．`RSNPUnit/RSNPUnitConnector_RTM_rtc/SampleSendTestComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．  
 
 RSNPUnitConnector RTCの仕様は，次の表のとおりです．  
 
@@ -293,7 +311,7 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 
 #### RSNPユニットに接続する  
 
-コンフィグレーションパラメータの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．設定後，RTCをアクティベートにすることで，RSNPユニットに接続することができます．正常に接続できれば，RTCはグリーンになりアクティベート状態になります．  
+コンフィグレーションパラメータの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．設定後，RTCをアクティベートにすることで，RSNPユニットに接続することができます．正常に接続できれば，RTCはグリーンになりアクティベート状態になります．  
 
 <img src="https://user-images.githubusercontent.com/44587055/63647401-b5597180-c75b-11e9-9715-994c98419a74.png" width=45%>  
 
@@ -301,7 +319,7 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 
 ### 3.4 ROSでの接続を行うケース  
 
-ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はRSNPUnitConnector，ノード名もRSNPUnitConnectorとなります．  
+ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はrsnpunitconnector_pkg，ノード名はrsnpunitconnectorとなります．  
 
 <img src="https://user-images.githubusercontent.com/44587055/63647169-197a3680-c758-11e9-946c-e9c56fe8ace9.png" width=50%>  
 
@@ -309,22 +327,14 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 | :-----------------------------: | :----------: |
 | Ubuntu 16.04, Ubuntu18.04 | Kinetic, Melodic |
 
-次のURLから"RSNPUnitConnector"をダウンロードをしてください．
+次のURLから"rsnpunitconnector"をダウンロードをしてください．
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．  
+`rsnpunitconnector_pkg/src`内に`rsnpunitconnector.py`があるので，nodoを起動するにはこのpyファイルを実行してください．また，テストデータ送信用nodeとして`samplesendtest`を用意してあります．現状，カウントと時刻のデータを出力する仕様となっています．実装する際にはそちらを参考にしてください．また，`rsnpunitconnector_pkg/msg`内では，msgファイルを定義していますが，string型の`message_data`となっています．subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．  
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでnodeを起動するために，次のようにroslaunchのXMLファイルを記述する必要があります．  
-
-~~~text
-<launch>
-    <rosparam command="load" file="$ ~/RSNPUnit/RSNPUnitConnector(ROS_pkg)/Config.yaml" >
-<launch>
-~~~  
-
-また，Config.yamlの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．  
+`rsnpunitconnector_pkg/src`内に`config.ini`があるので，RSNPユニットに接続するためにはそれを編集します．設定したパラメータでプログラムを実行するためにconfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
 <div style="page-break-before:always"></div>  
 
@@ -342,7 +352,7 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.6 ミドルウエアを使用していない，Serial通信で接続するケース  
 
@@ -357,9 +367,25 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
-### 3.7 状態の確認  
+### 3.7 RSNPユニットハードを使わないケース  
+
+本システムはRSNPユニットを外付けすることで容易にRSNP通信できます．しかし，ユニットハードを用いなくても，PC上でRSNPNotifi.jarを実行し，それにSocket通信でデータ送信することで，RSNP通信できます．  
+
+<img src="https://user-images.githubusercontent.com/44587055/68920189-d9a37800-07b7-11ea-9419-a63dbe55434b.png" width=60%>  
+
+次のURLからサンプルソースコードをダウンロードをしてください．
+https://github.com/SatoshiOkano/RSNPUnit.git  
+
+`RSNPUnit`内の`RSNPNotifi.jar`がメインの実行ファイルととなります．実行するために以下のようにターミナルまたはコマンドプロンプト等でコマンドを入力します．  
+`~$ java -jar RSNPNotifi.jar`  
+
+#### RSNPユニットに接続する  
+
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．"IPaddress"はローカルホストである"127.0.0.1"で接続することを推奨します．  
+
+### 3.8 状態の確認  
 
 ロボットまたはデバイスからRSNPユニットにデータを送信すると，RSNPでサーバに送信されます．
 サーバにアクセスすることでWebブラウザ上に状態が反映されているか確認することができます．  
@@ -370,8 +396,8 @@ http://robots.aiit.ac.jp:8080/Robomech2019/
 以下のようにブラウザ上で表示されていれば，確認完了です．  
 今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
 
-robot_id=2のロボットを稼働させた例を下の図に示す．  
-<img src="https://user-images.githubusercontent.com/44587055/58847016-4caeab80-86bc-11e9-9b39-e87f95fe140a.png" width=60%>  
+"robot_id"=1のロボットで"result"="test_string"を送信した例を下の図に示す．  
+<img src="https://user-images.githubusercontent.com/44587055/68925161-ce574900-07c5-11ea-93fb-5263e5ad1dc5.png" width=60%>  
 
 他にもロボットの画像に差し替えたり，表示するデータの種類も変更して表示情報を変更することができます．  
 
@@ -432,7 +458,7 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 |   **コメント**   |  **co**   |
 
 上記のロボットの例の場合は，  
-`{"data":[{"ac_id":1,"ac":"挨拶回数","re_id":1,"re":3,"co":""},{"ac_id":2,"ac":"人数","re_id":2,"re":5,"co":""}]}`  
+`{"data":[{"ac_id":"1","ac":"挨拶回数","re_id":"1","re":3,"co":""},{"ac_id":"2","ac":"人数","re_id":"2","re":5,"co":""}]}`  
 となります(コメントは無しのため，空欄("")となっています)．つまり，最終的にこのデータ形式で**文字列型データ**で送信することになります．  
 データが複数種類の場合は，配列の成分が増加し，  
 ``{"data":[{...},{...},{...},...]}``  
