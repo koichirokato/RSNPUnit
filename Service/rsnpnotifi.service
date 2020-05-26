@@ -1,0 +1,13 @@
+[Unit]
+Description = rsnpnotifiservice run
+After = network.target
+
+[Service]
+ExecStart = sh /home/pi/Running.sh
+Type = simple
+Restart = on-failure
+RestartSec = 20
+KillMode = process
+
+[Install]
+WantedBy = multi-user.target

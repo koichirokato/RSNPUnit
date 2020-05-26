@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/robo/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/robo/catkin_ws/src/cereal_port/include",
+                "/home/robo/catkin_ws/src/irvs_ros_tutorials/include",
+                "/home/robo/catkin_ws/src/realsense-ros/realsense2_camera/include",
+                "/home/robo/catkin_ws/src/roomba_500_series/include",
+                "/home/robo/catkin_ws/src/socket_pkg/include",
+                "/home/robo/catkin_ws/src/trashbot_system/include",
+                "/home/robo/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include",
+                "/home/robo/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include",
+                "/home/robo/catkin_ws/src/turtlebot3/turtlebot3_slam/include",
+                "/home/robo/catkin_ws/src/ypspur_ros/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
