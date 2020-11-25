@@ -69,7 +69,7 @@ The default is as follows, so change the ip address to raspberry pi's ip address
 Configuretion
 robot_id  = 1  
 robot_pw  = 8073  
-end_point = http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
+end_point = http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services
 send_interval = 10000
 ip_address = 127.0.0.1
 port = 8000
@@ -93,7 +93,8 @@ In production
 
 ### 3.3 Connect to the Unit use ROS  
 
-Use socket communication of python.  
+Use socket communication of python.
+You can use [RSNPUnitConnector_ROS_pkg](https://github.com/koichirokato/RSNPUnit/tree/master/RSNPUnitConnector_ROS_pkg/rsnpunitconnector_pkg)  
 
 ### 3.4 Check the status  
 
