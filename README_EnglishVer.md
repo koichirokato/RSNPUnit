@@ -10,7 +10,7 @@
 - [3. Run action of the RSNP Unit](#3-run-action-of-the-rsnp-unit)
   - [3.1 Execution of RSNP communication program](#31-execution-of-rsnp-communication-program)
   - [3.2 Program execution daemonized](#32-program-execution-daemonized)
-  - [3.3 Connect to the Unit use ROS](#33-connect-to-the-unit-use-ros)
+  - [3.3 Connect to the Unit use ROS(or some socket client)](#33-connect-to-the-unit-use-rosor-some-socket-client)
   - [3.4 Check the status](#34-check-the-status)
 - [4 Data format of communication data to the Unit](#4-data-format-of-communication-data-to-the-unit)
 
@@ -91,10 +91,11 @@ And, run the program.
 
 In production
 
-### 3.3 Connect to the Unit use ROS  
+### 3.3 Connect to the Unit use ROS(or some socket client)  
 
-Use socket communication of python.
+Use socket communication of python.  
 You can use [RSNPUnitConnector_ROS_pkg](https://github.com/koichirokato/RSNPUnit/tree/master/RSNPUnitConnector_ROS_pkg/rsnpunitconnector_pkg)  
+And you can use [RSNPUnitConnector_Socket_sample](https://github.com/koichirokato/RSNPUnit/blob/master/RSNPUnitConnector_Socket_sample/Python/Socket_sample.py)
 
 ### 3.4 Check the status  
 
