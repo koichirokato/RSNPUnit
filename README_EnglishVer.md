@@ -102,7 +102,7 @@ You can check below URL.
 Confirmation is complete if it is displayed on the browser as shown below.  
 This time, it is just an example of displaying the operating status of RaspberryPi and the status of the sensor connected to it.  
 The figure below shows an example of operating the robot with robot_id = 2.  
-http://robots.aiit.ac.jp:8080/Robomech2019/  
+http://robo-lab.mydns.jp:8080/RSNPTutorial2020/  
 <img src="https://user-images.githubusercontent.com/44587055/58847016-4caeab80-86bc-11e9-9b39-e87f95fe140a.png" width=60%>  
 
 ## 4 Data format of communication data to the Unit  
