@@ -87,13 +87,34 @@ to go to derectory of RSNPUnit, enter command.
 And, run the program.  
 `~$ java -jar RSNPNotifi.jar`  
 
+After successful launch, you will see the following.  
+
+```shell
+***** host of IPaddr: 127.0.0.1 *****
+***** waiting for connection *****
+11 26, 2020 12:32:50 午後 com.fujitsu.rsi.client.ClientTunnel connect
+情報: 接続します。
+11 26, 2020 12:32:50 午後 com.fujitsu.rsi.client.ClientProxy$MessageDispatcher run
+情報: --- MessageDispatcher.run start ---
+11 26, 2020 12:32:51 午後 com.fujitsu.rsi.client.ClientTunnel$UpboundThrower run
+情報: --- UpboundThrower.run start ---
+11 26, 2020 12:32:52 午後 com.fujitsu.rsi.client.ClientTunnel$DownboundReceiver <init>
+情報: 接続しました。：comm_idBE3B37C077560784
+11 26, 2020 12:32:52 午後 com.fujitsu.rsi.client.ClientTunnel$DownboundReceiver run
+情報: --- DownboundReceiver.run start ---
+11 26, 2020 12:32:52 午後 rsnp.StateXMLNotificationMain main
+情報: conv_id:-1651888826
+```
+
+If you can check the **`conv_id:XXXXXXXXXXXXXX`**, it is OK.  
+
 ### 3.2 Program execution daemonized  
 
-In production
+In production  
 
 ### 3.3 Connect to the Unit use ROS(or some socket client)  
 
-Use socket communication of python.  
+Use socket communication of python or Java or something(up to you).  
 You can use [RSNPUnitConnector_ROS_pkg](https://github.com/koichirokato/RSNPUnit/tree/master/RSNPUnitConnector_ROS_pkg/rsnpunitconnector_pkg)  
 And you can use [RSNPUnitConnector_Socket_sample](https://github.com/koichirokato/RSNPUnit/blob/master/RSNPUnitConnector_Socket_sample/Python/Socket_sample.py)
 
